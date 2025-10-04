@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body {
+    box-sizing: border-box;
+}
+
+.action-button {
+    @apply w-20 h-20 text-center text-sm text-white font-bold active:scale-110 cursor-pointer flex flex-col justify-center items-center
+}

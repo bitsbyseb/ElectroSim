@@ -1,13 +1,14 @@
+import type { ElectricFieldSensor } from "@components/Sensor";
+import type { singlyLinkedList } from "@utils/LinkedList";
+import type { Equipotential } from "@components/Equipotential";
 import type p5 from "p5";
-import type { ElectricFieldSensor } from "./Sensor";
-import type { singlyLinkedList } from "../utils/LinkedList";
 
 interface ParticleParams {
     x: number,
     y: number,
     p: p5,
     sign: boolean | null,
-    particles:singlyLinkedList<Particle>
+    particles: singlyLinkedList<Particle>
 }
 
 export class Particle {
@@ -16,9 +17,10 @@ export class Particle {
     public y: number;
     public chargeInCoulombs = 0;
     public dragging = false;
+    public isMouseOver = false;
     public sign: boolean | null;
     public readonly radius: number = 40;
-    protected particles:singlyLinkedList<Particle>;
+    protected particles: singlyLinkedList<Particle>;
 
     constructor(params: ParticleParams) {
         this.x = params.x;
@@ -28,11 +30,11 @@ export class Particle {
         this.particles = params.particles;
 
         if (this.sign) {
-            this.chargeInCoulombs = 1.602 * (10**(-19));
+            this.chargeInCoulombs = 1.602 * (10 ** (-19));
         }
 
         if (this.sign === false) {
-            this.chargeInCoulombs = -1.602 * (10**(-19));
+            this.chargeInCoulombs = -1.602 * (10 ** (-19));
         }
 
         if (this.sign === null) {
@@ -42,15 +44,16 @@ export class Particle {
 
     public draw() {
         if (this.dragging && this.p.mouseButton.left) {
-            this.p.cursor("drag");
             this.x = this.p.constrain(this.p.mouseX, this.radius, this.p.width - this.radius);
             this.y = this.p.constrain(this.p.mouseY, this.radius, this.p.height - this.radius);
         }
 
-        if (this.dragging && this.p.key === "x") {
+        if (this.isMouseOver && this.p.key.toLowerCase() === "x") {
             this.delete();
         }
+
         this.p.push();
+        this.isMouseOver && this.p.cursor('grab');
         this.p.fill(this.sign ? "red" : this.sign === null ? "white" : "blue");
         this.p.stroke("white");
         this.p.strokeWeight(4);
@@ -77,25 +80,31 @@ export class Particle {
         const distance = this.p.dist(mouseX, mouseY, this.x, this.y);
         if (distance < this.radius) {
             this.dragging = true;
+            return;
         }
-    }
-
-    public mouseReleased(): void {
         this.dragging = false;
     }
 
-    // Detectar colisión con otra partícula
-    public isCollidingWith(other: Particle | ElectricFieldSensor): boolean {
+    public mouseOver(): void {
+        const { mouseX, mouseY } = this.p;
+        const distance = this.p.dist(mouseX, mouseY, this.x, this.y);
+        if (distance < this.radius) {
+            this.isMouseOver = true;
+            return;
+        }
+        this.isMouseOver = false;
+    }
+
+    public isCollidingWith(other: Particle | ElectricFieldSensor | Equipotential): boolean {
         const distance = this.p.dist(this.x, this.y, other.x, other.y);
         return distance < (this.radius + other.radius);
     }
 
-    // Resolver colisión con otra partícula
-    public resolveCollision(other: Particle | ElectricFieldSensor): void {
+    public resolveCollision(other: Particle | ElectricFieldSensor | Equipotential): void {
         const dx = other.x - this.x;
         const dy = other.y - this.y;
         const distance = this.p.dist(this.x, this.y, other.x, other.y);
-        
+
         // Si están exactamente en la misma posición, separar con un offset aleatorio
         if (distance === 0) {
             const angle = this.p.random(0, this.p.TWO_PI);
@@ -125,7 +134,7 @@ export class Particle {
                 // Si ninguna está siendo arrastrada, separar ambas por la mitad
                 const separationX = nx * overlap * 0.5;
                 const separationY = ny * overlap * 0.5;
-                
+
                 this.x -= separationX;
                 this.y -= separationY;
                 other.x += separationX;

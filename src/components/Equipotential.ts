@@ -1,18 +1,33 @@
+import type { ElectricFieldSensor } from "@components/Sensor";
 import type { singlyLinkedList } from "@utils/LinkedList";
 import type { Particle } from "@components/particle";
-import type { Equipotential } from "@components/Equipotential";
 import type p5 from "p5";
 
-export class ElectricFieldSensor {
+interface EquipotentialParams {
+    particles: singlyLinkedList<Particle>,
+    potentialSensors: singlyLinkedList<Equipotential>,
+    x: number,
+    y: number,
+    p: p5
+}
+
+export class Equipotential {
+    public radius = 40;
+    protected particles: singlyLinkedList<Particle>;
+    protected potentialSensors: singlyLinkedList<Equipotential>;
+    public x: number;
+    public y: number;
+    public p: p5;
     public dragging = false;
     public isMouseOver = false;
-    public radius = 10;
-    private maxArrowLenght = 150;
-    protected arrowColor: string = "orange";
     private METERS_PER_PIXEL = 1e-10;
-    private sensors: singlyLinkedList<ElectricFieldSensor>;
-    constructor(public x: number, public y: number, private p: p5, private particles: singlyLinkedList<Particle>, sensors: singlyLinkedList<ElectricFieldSensor>) {
-        this.sensors = sensors;
+
+    constructor(params: EquipotentialParams) {
+        this.particles = params.particles;
+        this.potentialSensors = params.potentialSensors;
+        this.x = params.x;
+        this.y = params.y;
+        this.p = params.p;
     }
 
     public draw() {
@@ -24,26 +39,61 @@ export class ElectricFieldSensor {
         if (this.isMouseOver && this.p.key.toLowerCase() === "x") {
             this.delete();
         }
-
-        const [Ex, Ey] = this.calculateElectricField(this.x, this.y);
-        const magnitude = Math.sqrt((Ex ** 2) + (Ey ** 2));
-        if (magnitude === 0) {
-            this.delete();
-            return;
-        }
-
         this.p.push();
         this.isMouseOver && this.p.cursor('grab');
-        this.p.fill("red");
+        this.p.fill("orange");
         this.p.stroke("white");
         this.p.strokeWeight(2);
         this.p.ellipse(this.x, this.y, this.radius * 2);
 
-        const scale = this.maxArrowLenght / magnitude;
-        const finalPointX = this.x + (Ex * scale);
-        const finalPointY = this.y + (Ey * scale);
+        const potential = this.calculatePotential();
+
+        this.p.fill("white");
+        this.p.stroke("orange")
+        this.p.strokeWeight(2);
+        this.p.textSize(18);
+        this.p.text(this.formatPotential(potential), this.x - this.x*0.05, this.y - this.radius - 10)
         this.p.pop();
-        this.drawArrow(this.x, this.y, finalPointX, finalPointY);
+    }
+
+    public calculatePotential(): number {
+        const particlesArr = this.particles.toArray();
+        const k = 8.99 * (10 ** 9);
+        let finalPotential = 0;
+        for (let particle of particlesArr) {
+            const distance = this.getDistanceInMeters(this.x, this.y, particle.x, particle.y);
+
+            if (distance < 1e-15) {
+                continue;
+            }
+
+
+
+            finalPotential += k * (particle.chargeInCoulombs / distance)
+        }
+        return finalPotential;
+    }
+
+    private formatPotential(V: number): string {
+        const absV = Math.abs(V);
+
+        // Si es prácticamente cero
+        if (absV < 1e-9) return "0.00 V";
+
+        // Siempre en notación científica
+        return V.toExponential(2) + " V";
+    }
+
+    private getDistanceInMeters(x1_px: number, y1_px: number, x2_px: number, y2_px: number): number {
+        const dx_px = x2_px - x1_px;
+        const dy_px = y2_px - y1_px;
+        const distance_px = Math.sqrt(dx_px ** 2 + dy_px ** 2);
+        return distance_px * this.METERS_PER_PIXEL;
+    }
+
+    public delete() {
+        const index = this.potentialSensors.getIndexOf(this);
+        this.potentialSensors.remove(index);
     }
 
     public mousePressed(): void {
@@ -66,79 +116,11 @@ export class ElectricFieldSensor {
         this.isMouseOver = false;
     }
 
-    public drawArrow(x1: number, y1: number, x2: number, y2: number) {
-        // Línea principal
-        this.p.push();
-        this.p.stroke(this.arrowColor)
-        this.p.fill(this.arrowColor); // Mismo color que la línea
-        this.p.line(x1, y1, x2, y2);
-
-        // Calcular ángulo
-        const angle = this.p.atan2(y2 - y1, x2 - x1);
-        const arrowSize = 10;
-
-        this.p.translate(x2, y2);
-        this.p.rotate(angle);
-
-        // Dibujar triángulo sólido
-        this.p.noStroke();
-        this.p.triangle(
-            0, 0,                           // Punta
-            -arrowSize, arrowSize / 2,      // Esquina superior
-            -arrowSize, -arrowSize / 2      // Esquina inferior
-        );
-
-        this.p.pop();
-    }
-
-    public calculateElectricField(x: number, y: number): [number, number] {
-        const particlesArr = this.particles.toArray();
-        let ExTotal = 0;
-        let EyTotal = 0;
-
-        for (let particle of particlesArr) {
-            let dx = (x - particle.x) * this.METERS_PER_PIXEL;
-            let dy = (y - particle.y) * this.METERS_PER_PIXEL;
-
-            const k = 8.99 * (10 ** 9);
-            const r = Math.sqrt((dx ** 2) + (dy ** 2));
-            // console.table({
-            //     r,
-            //     q: particle.chargeInCoulombs,
-            //     k
-            // });
-
-            if (r < particle.radius * this.METERS_PER_PIXEL) {
-                continue;
-            }
-
-            if (particle.chargeInCoulombs === 0) {
-                continue;
-            }
-
-            const r3 = r ** 3;
-
-            const Ex_particle = k * particle.chargeInCoulombs * dx / r3;
-            const Ey_particle = k * particle.chargeInCoulombs * dy / r3;
-
-            ExTotal += Ex_particle;
-            EyTotal += Ey_particle;
-        }
-
-        return [ExTotal, EyTotal];
-    }
-
-    private delete() {
-        const index = this.sensors.getIndexOf(this);
-        this.sensors.remove(index);
-    }
-
     public isCollidingWith(other: Particle | ElectricFieldSensor | Equipotential): boolean {
         const distance = this.p.dist(this.x, this.y, other.x, other.y);
         return distance < (this.radius + other.radius);
     }
 
-    // Resolver colisión con otra partícula
     public resolveCollision(other: Particle | ElectricFieldSensor | Equipotential): void {
         const dx = other.x - this.x;
         const dy = other.y - this.y;

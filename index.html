@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-hidden">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ElectroSim⛈️</title>
   <link rel="stylesheet" href="/src/style.css">
+  <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-  <main class="w-screen h-screen flex flex-row justify-center items-center bg-[#181818]">
-    <section class="w-3/4 h-full bg-[#06202B] rounded-2xl overflow-hidden">
-      <div id="canvas-container" class="w-full h-3/4">
+  <main class="w-screen h-screen flex flex-row justify-center items-center bg-[#181818] overflow-hidden">
+    <section class="w-4/6 h-full bg-[#06202B] rounded-2xl overflow-hidden">
+      <div id="canvas-container" class="w-full h-3/4 rounded-3xl border-4 border-[#0DA2E5] overflow-hidden">
 
       </div>
-      <div id="buttons" class="w-full h-1/4 bg-[#212121] flex items-center justify-start gap-10">
+      <div id="buttons" class="w-full h-1/4 bg-[#212121] flex items-center justify-start rounded-xl gap-10 px-10 border-4 border-gray-600">
 
         <button id="proton" class="action-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#FF0000" class="bi bi-plus-circle"
@@ -60,11 +61,369 @@
           </svg>
           Sensor
         </button>
+
+        <button id="potential" class="action-button">
+          <?xml version="1.0" encoding="iso-8859-1"?>
+          <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+          <svg height="100%" width="100%" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+            <path style="fill:#464655;" d="M501.481,442.907L271.256,51.008c-6.854-11.667-23.658-11.667-30.512,0L10.518,442.907
+	c-6.968,11.861,1.545,26.835,15.256,26.835h460.451C499.937,469.741,508.45,454.767,501.481,442.907z" />
+            <path style="fill:#5B5D6E;" d="M308.393,114.226c-73.155,52.79-120.816,138.714-120.816,235.821
+	c0,42.686,9.277,83.182,25.804,119.695h272.845c13.71,0,22.224-14.974,15.256-26.835L308.393,114.226z" />
+            <path style="fill:#FFDC64;" d="M252.314,98.83L60.132,425.968c-2.489,4.236,0.566,9.575,5.48,9.575h380.774
+	c4.914,0,7.969-5.338,5.48-9.575L259.686,98.83C258.033,96.017,253.966,96.017,252.314,98.83z" />
+            <path style="fill:#FFF082;" d="M187.577,350.046c0,29.758,4.493,58.463,12.801,85.497h246.01c4.914,0,7.969-5.338,5.48-9.575
+	L281.561,136.067C223.798,189.193,187.577,265.379,187.577,350.046z" />
+            <path
+              d="M508.392,438.847L278.167,46.948c-4.673-7.955-12.96-12.706-22.167-12.706c-9.207,0-17.493,4.75-22.166,12.706
+	L3.607,438.847c-4.758,8.099-4.811,17.8-0.146,25.953c4.644,8.114,12.985,12.958,22.312,12.958h460.452
+	c9.328,0,17.669-4.844,22.313-12.958C513.205,456.646,513.15,446.944,508.392,438.847z M494.625,456.836
+	c-0.842,1.469-3.345,4.89-8.4,4.89H25.774c-5.055,0-7.558-3.42-8.4-4.89c-1.774-3.1-1.754-6.791,0.056-9.87L247.655,55.068
+	c2.542-4.327,6.683-4.795,8.344-4.795s5.802,0.467,8.344,4.795l230.227,391.897C496.38,450.046,496.4,453.735,494.625,456.836z" />
+            <path d="M290.021,166.291c1.493,2.541,4.169,3.956,6.919,3.956c1.38,0,2.778-0.356,4.053-1.105
+	c3.816-2.242,5.093-7.154,2.851-10.971l-6.719-11.437c-2.242-3.817-7.155-5.092-10.971-2.851c-3.816,2.242-5.093,7.154-2.851,10.971
+	L290.021,166.291z" />
+            <path d="M320.908,187.219c-2.243-3.817-7.155-5.093-10.971-2.851c-3.817,2.242-5.093,7.154-2.851,10.97l136.401,232.188H68.513
+	l187.488-319.147l10.181,17.33c2.242,3.817,7.155,5.092,10.971,2.851c3.817-2.242,5.093-7.154,2.851-10.971l-17.092-29.095
+	c-1.44-2.451-4.07-3.955-6.911-3.955c-2.842,0-5.472,1.505-6.911,3.955L47.596,431.482c-1.456,2.478-1.473,5.547-0.045,8.041
+	c1.428,2.494,4.082,4.033,6.956,4.033h402.984c2.874,0,5.528-1.539,6.956-4.033c1.428-2.494,1.411-5.564-0.045-8.041
+	L320.908,187.219z" />
+            <path d="M233.819,293.438l29.952-112.32c1.14-4.277-1.402-8.669-5.679-9.81c-4.279-1.14-8.669,1.402-9.81,5.679l-34.199,128.245
+	c-0.791,2.964,0.18,6.119,2.5,8.126c2.32,2.007,5.581,2.515,8.402,1.306l46.572-19.959l-11.153,72.496
+	c-1.864-3.055-5.616-4.587-9.195-3.484c-4.23,1.305-6.601,5.791-5.298,10.021l9.242,29.968c0.895,2.902,3.351,5.048,6.347,5.544
+	c0.439,0.073,0.877,0.109,1.313,0.109c2.539,0,4.962-1.209,6.484-3.306l18.429-25.374c2.601-3.581,1.806-8.595-1.775-11.196
+	c-2.989-2.172-6.969-1.97-9.718,0.235l13.362-86.852c0.444-2.878-0.711-5.77-3.012-7.555c-2.302-1.785-5.389-2.179-8.068-1.031
+	L233.819,293.438z" />
+          </svg>
+          Potencial
+        </button>
+
+        <button id="reset" class="action-button">
+          <svg fill="#ffffff" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M960 0v213.333c411.627 0 746.667 334.934 746.667 746.667S1371.627 1706.667 960 1706.667 213.333 1371.733 213.333 960c0-197.013 78.4-382.507 213.334-520.747v254.08H640V106.667H53.333V320h191.04C88.64 494.08 0 720.96 0 960c0 529.28 430.613 960 960 960s960-430.72 960-960S1489.387 0 960 0"
+                fill-rule="evenodd"></path>
+            </g>
+          </svg>
+          Resetear
+        </button>
       </div>
     </section>
 
-    <section class="theory w-1/4 h-full bg-[#303030] pt-16 text-white">
-      <h2 class="text-center text-2xl font-bold">Bienvenido a ElectroSim⛈️</h2>
+    <section class="w-2/6 h-full bg-[#303030] text-white px-4 overflow-hidden">
+      <div class="w-full h-1/12 flex justify-between items-center mt-6 pb-3.5 border-b-1 border-white">
+        <button
+          id="homeDocs" class="w-14 h-14 flex justify-center items-center bg-[#3276C3] p-2 cursor-pointer rounded-lg active:scale-110">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4.18753 11.3788C4.03002 11.759 4 11.9533 4 12V20.0018C4 20.5529 4.44652 21 5 21H8V15C8 13.8954 8.89543 13 10 13H14C15.1046 13 16 13.8954 16 15V21H19C19.5535 21 20 20.5529 20 20.0018V12C20 11.9533 19.97 11.759 19.8125 11.3788C19.6662 11.0256 19.4443 10.5926 19.1547 10.1025C18.5764 9.1238 17.765 7.97999 16.8568 6.89018C15.9465 5.79788 14.9639 4.78969 14.0502 4.06454C13.5935 3.70204 13.1736 3.42608 12.8055 3.2444C12.429 3.05862 12.1641 3 12 3C11.8359 3 11.571 3.05862 11.1945 3.2444C10.8264 3.42608 10.4065 3.70204 9.94978 4.06454C9.03609 4.78969 8.05348 5.79788 7.14322 6.89018C6.23505 7.97999 5.42361 9.1238 4.8453 10.1025C4.55568 10.5926 4.33385 11.0256 4.18753 11.3788ZM10.3094 1.45091C10.8353 1.19138 11.4141 1 12 1C12.5859 1 13.1647 1.19138 13.6906 1.45091C14.2248 1.71454 14.7659 2.07921 15.2935 2.49796C16.3486 3.33531 17.4285 4.45212 18.3932 5.60982C19.3601 6.77001 20.2361 8.0012 20.8766 9.08502C21.1963 9.62614 21.4667 10.1462 21.6602 10.6134C21.8425 11.0535 22 11.5467 22 12V20.0018C22 21.6599 20.6557 23 19 23H16C14.8954 23 14 22.1046 14 21V15H10V21C10 22.1046 9.10457 23 8 23H5C3.34434 23 2 21.6599 2 20.0018V12C2 11.5467 2.15748 11.0535 2.33982 10.6134C2.53334 10.1462 2.80369 9.62614 3.12345 9.08502C3.76389 8.0012 4.63995 6.77001 5.60678 5.60982C6.57152 4.45212 7.65141 3.33531 8.70647 2.49796C9.2341 2.07921 9.77521 1.71454 10.3094 1.45091Z"
+                fill="#ffffff"></path>
+            </g>
+          </svg>
+        </button>
+        <h2 class="w-full font-bold text-3xl text-center">Documentación</h2>
+      </div>
+      <div class="w-full h-10/12 theory overflow-y-scroll overflow-x-hidden mt-10 pb-16 pr-4">
+        <div class="space-y-6">
+          <!-- Hero Section -->
+          <div
+            class="text-center p-8 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white rounded-xl shadow-xl"
+            style="background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 50%, #06202B 100%);">
+            <h1 class="text-4xl md:text-5xl font-bold mb-3">⚡ Bienvenido a ElectroSim</h1>
+            <p class="text-xl md:text-2xl opacity-95">Simulador Interactivo de Campos Eléctricos</p>
+          </div>
+
+          <!-- Intro Box -->
+          <div class="p-6 rounded-xl border-l-4 border-blue-500" style="background-color: #212121;">
+            <h2 class="text-2xl font-bold text-white mb-4">📚 Sobre el Proyecto</h2>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              <strong class="text-blue-400">ElectroSim</strong> es un simulador educativo desarrollado para facilitar
+              la comprensión de conceptos fundamentales de electromagnetismo a través de
+              visualización interactiva y experimentación en tiempo real.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              Este proyecto está desarrollado completamente para la web, lo que significa que
+              puedes acceder a él desde cualquier dispositivo con un navegador moderno, sin
+              necesidad de instalaciones adicionales.
+            </p>
+          </div>
+
+          <!-- Team Box -->
+          <div class="p-6 rounded-xl border-l-4 border-cyan-500" style="background-color: #181818;">
+            <h3 class="text-xl font-bold text-white mb-4">👥 Equipo de Desarrollo</h3>
+            <ul class="space-y-2">
+              <li class="text-gray-300 text-lg">👤 Johan Sebastian Puentes Pulido</li>
+              <li class="text-gray-300 text-lg">👤 Juan Sebastian Caicedo Ruiz</li>
+              <li class="text-gray-300 text-lg">👤 Dylan Alejandro Guzman Gomez</li>
+            </ul>
+            <p class="text-center italic text-gray-400 mt-4 pt-4 border-t border-gray-700">
+              Proyecto Académico Universitario
+            </p>
+          </div>
+
+          <!-- Audience Box -->
+          <div class="p-6 rounded-xl border-l-4 border-blue-500" style="background-color: #212121;">
+            <h2 class="text-2xl font-bold text-white mb-4">🎯 ¿Para Quién es Este Simulador?</h2>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              ElectroSim está diseñado para estudiantes de educación superior en áreas como:
+            </p>
+            <ul class="space-y-2 ml-5">
+              <li class="text-gray-300 list-disc">Ingeniería de Sistemas y Computación</li>
+              <li class="text-gray-300 list-disc">Ingeniería Electrónica</li>
+              <li class="text-gray-300 list-disc">Física y ciencias relacionadas</li>
+              <li class="text-gray-300 list-disc">Cualquier persona interesada en comprender el electromagnetismo</li>
+            </ul>
+          </div>
+
+          <!-- Concepts Box -->
+          <div class="p-6 rounded-xl border-l-4 border-blue-500" style="background-color: #212121;">
+            <h2 class="text-2xl font-bold text-white mb-4">💡 Conceptos que Puedes Explorar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div class="p-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                style="background-color: #303030;">
+                <strong class="text-blue-400 block mb-2 text-lg">Campo Eléctrico</strong>
+                <p class="text-gray-400 text-sm">Visualiza cómo las cargas generan campos vectoriales en el espacio</p>
+              </div>
+              <div class="p-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                style="background-color: #303030;">
+                <strong class="text-blue-400 block mb-2 text-lg">Potencial Eléctrico</strong>
+                <p class="text-gray-400 text-sm">Observa la distribución de energía potencial alrededor de las cargas
+                </p>
+              </div>
+              <div class="p-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                style="background-color: #303030;">
+                <strong class="text-blue-400 block mb-2 text-lg">Líneas de Campo</strong>
+                <p class="text-gray-400 text-sm">Representa gráficamente la dirección y sentido del campo eléctrico</p>
+              </div>
+              <div class="p-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                style="background-color: #303030;">
+                <strong class="text-blue-400 block mb-2 text-lg">Principio de Superposición</strong>
+                <p class="text-gray-400 text-sm">Experimenta cómo múltiples cargas combinan sus efectos</p>
+              </div>
+              <div class="p-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 md:col-span-2"
+                style="background-color: #303030;">
+                <strong class="text-blue-400 block mb-2 text-lg">Interacciones y Colisiones</strong>
+                <p class="text-gray-400 text-sm">Observa el comportamiento dinámico entre partículas cargadas</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guide Box -->
+          <div class="p-6 rounded-xl border-l-4 border-blue-500" style="background-color: #212121;">
+            <h2 class="text-2xl font-bold text-white mb-6">🎮 Cómo Usar el Simulador</h2>
+
+            <!-- Add Elements -->
+            <div class="mb-8">
+              <h3 class="text-xl font-semibold text-blue-400 mb-4">➕ Agregar Elementos</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-5 rounded-xl text-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+                  style="background-color: #303030;">
+                  <div class="text-5xl mb-3">🔴</div>
+                  <h4 class="font-bold text-blue-400 mb-2">Protones (+)</h4>
+                  <p class="text-gray-400 text-sm">Haz clic en el botón <strong class="text-white">"Protón"</strong> en
+                    la barra inferior para agregar una carga positiva al centro del lienzo.</p>
+                </div>
+                <div class="p-5 rounded-xl text-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+                  style="background-color: #303030;">
+                  <div class="text-5xl mb-3">🔵</div>
+                  <h4 class="font-bold text-blue-400 mb-2">Electrones (−)</h4>
+                  <p class="text-gray-400 text-sm">Haz clic en el botón <strong class="text-white">"Electrón"</strong>
+                    para agregar una carga negativa al centro del lienzo.</p>
+                </div>
+                <div class="p-5 rounded-xl text-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+                  style="background-color: #303030;">
+                  <div class="text-5xl mb-3">📍</div>
+                  <h4 class="font-bold text-blue-400 mb-2">Sensores de Campo</h4>
+                  <p class="text-gray-400 text-sm">Agrega sensores que muestran la dirección del campo eléctrico en
+                    puntos específicos del espacio.</p>
+                </div>
+                <div class="p-5 rounded-xl text-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+                  style="background-color: #303030;">
+                  <div class="text-5xl mb-3">📊</div>
+                  <h4 class="font-bold text-blue-400 mb-2">Sensores de Potencial</h4>
+                  <p class="text-gray-400 text-sm">Coloca sensores para visualizar el valor del potencial eléctrico en
+                    diferentes ubicaciones.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Manipulate Elements -->
+            <div class="mb-8">
+              <h3 class="text-xl font-semibold text-blue-400 mb-4">🖱️ Manipular Elementos</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start text-gray-300 leading-relaxed">
+                  <span class="text-blue-500 mr-3 text-xl flex-shrink-0">▸</span>
+                  <span>
+                    <strong class="text-white">Mover:</strong> Mantén presionado el <span
+                      class="bg-blue-600 text-white px-2 py-1 rounded font-mono text-sm font-bold">clic izquierdo</span>
+                    sobre cualquier elemento y arrástralo a la posición deseada.
+                  </span>
+                </li>
+                <li class="flex items-start text-gray-300 leading-relaxed">
+                  <span class="text-blue-500 mr-3 text-xl flex-shrink-0">▸</span>
+                  <span>
+                    <strong class="text-white">Eliminar:</strong> Coloca el cursor sobre el elemento que deseas eliminar
+                    y presiona la tecla <span
+                      class="bg-blue-600 text-white px-2 py-1 rounded font-mono text-sm font-bold">X</span>.
+                  </span>
+                </li>
+                <li class="flex items-start text-gray-300 leading-relaxed">
+                  <span class="text-blue-500 mr-3 text-xl flex-shrink-0">▸</span>
+                  <span>
+                    <strong class="text-white">Resetear:</strong> Usa el botón de <strong
+                      class="text-white">"Reset"</strong> para limpiar
+                    completamente el escenario y empezar desde cero.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Visualization -->
+            <div class="mb-8">
+              <h3 class="text-xl font-semibold text-blue-400 mb-4">👁️ Visualización</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start text-gray-300 leading-relaxed">
+                  <span class="text-blue-500 mr-3 text-xl flex-shrink-0">▸</span>
+                  <span>
+                    <strong class="text-white">Líneas de Campo:</strong> Activa la visualización de líneas de campo
+                    para ver una representación gráfica completa del campo eléctrico global.
+                  </span>
+                </li>
+                <li class="flex items-start text-gray-300 leading-relaxed">
+                  <span class="text-blue-500 mr-3 text-xl flex-shrink-0">▸</span>
+                  <span>
+                    <strong class="text-white">Sensores Dinámicos:</strong> Los sensores se actualizan en tiempo real
+                    mostrando flechas que indican la dirección y magnitud del campo.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Documentation Panel -->
+            <div>
+              <h3 class="text-xl font-semibold text-blue-400 mb-4">📖 Panel de Documentación</h3>
+              <p class="text-gray-300 leading-relaxed mb-3">
+                Al agregar cualquier elemento al escenario, este panel (ubicado a la derecha)
+                se actualizará automáticamente mostrando información relevante sobre:
+              </p>
+              <ul class="space-y-2 ml-5">
+                <li class="text-gray-300 list-disc">Las ecuaciones matemáticas relacionadas</li>
+                <li class="text-gray-300 list-disc">Explicaciones de los conceptos físicos involucrados</li>
+                <li class="text-gray-300 list-disc">Variables y unidades de medida</li>
+                <li class="text-gray-300 list-disc">Propiedades y comportamiento del elemento</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tips Box -->
+          <div class="p-6 rounded-xl border-l-4 border-blue-500" style="background-color: #212121;">
+            <h2 class="text-2xl font-bold text-white mb-4">💡 Consejos para Aprovechar al Máximo</h2>
+            <div class="space-y-3">
+              <div class="p-4 rounded-lg border-l-4 border-emerald-500" style="background-color: #303030;">
+                <strong class="text-emerald-400">🔬 Experimenta libremente:</strong>
+                <span class="text-gray-300"> No hay forma de "romper" el simulador.
+                  Prueba diferentes configuraciones de cargas y observa los resultados.</span>
+              </div>
+              <div class="p-4 rounded-lg border-l-4 border-emerald-500" style="background-color: #303030;">
+                <strong class="text-emerald-400">📐 Prueba la simetría:</strong>
+                <span class="text-gray-300"> Coloca cargas en patrones simétricos
+                  (línea, círculo, cuadrado) y observa las líneas de campo resultantes.</span>
+              </div>
+              <div class="p-4 rounded-lg border-l-4 border-emerald-500" style="background-color: #303030;">
+                <strong class="text-emerald-400">⚖️ Cargas opuestas:</strong>
+                <span class="text-gray-300"> Experimenta con pares de cargas de signos
+                  opuestos y observa cómo interactúan sus campos (configuración dipolar).</span>
+              </div>
+              <div class="p-4 rounded-lg border-l-4 border-emerald-500" style="background-color: #303030;">
+                <strong class="text-emerald-400">🎯 Usa sensores estratégicamente:</strong>
+                <span class="text-gray-300"> Coloca sensores en puntos
+                  clave para comparar la intensidad del campo en diferentes ubicaciones.</span>
+              </div>
+              <div class="p-4 rounded-lg border-l-4 border-emerald-500" style="background-color: #303030;">
+                <strong class="text-emerald-400">📚 Lee la documentación:</strong>
+                <span class="text-gray-300"> Cada vez que agregues un elemento,
+                  revisa el panel de documentación para profundizar en la teoría.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Box -->
+          <div class="p-6 rounded-xl border-l-4 border-blue-500" style="background-color: #212121;">
+            <h2 class="text-2xl font-bold text-white mb-4">🛠️ Tecnologías Utilizadas</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              ElectroSim está construido con tecnologías web modernas:
+            </p>
+            <div class="flex flex-wrap gap-3 mb-4">
+              <span
+                class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">TypeScript</span>
+              <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">Vite</span>
+              <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">P5.js</span>
+              <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">Canvas
+                API</span>
+              <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">WebGL</span>
+              <span
+                class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">TailwindCSS</span>
+            </div>
+            <p class="text-gray-400 text-sm italic">
+              Esto garantiza un rendimiento óptimo y compatibilidad con navegadores modernos,
+              permitiendo simulaciones fluidas y visualizaciones de alta calidad.
+            </p>
+          </div>
+
+          <!-- Future Box -->
+          <div class="p-6 rounded-xl border-l-4 border-blue-500" style="background-color: #212121;">
+            <h2 class="text-2xl font-bold text-white mb-4">🚀 Próximas Funcionalidades</h2>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              Estamos trabajando en nuevas características para mejorar tu experiencia:
+            </p>
+            <ul class="space-y-3">
+              <li class="text-gray-300 text-lg flex items-start">
+                <span class="mr-2">📏</span>
+                <span><strong class="text-white">Regla de medición:</strong> Herramienta para medir distancias precisas
+                  entre elementos</span>
+              </li>
+              <li class="text-gray-300 text-lg flex items-start">
+                <span class="mr-2">🌊</span>
+                <span><strong class="text-white">Curvas equipotenciales:</strong> Visualización de líneas de igual
+                  potencial eléctrico</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Start Box -->
+          <div class="p-6 rounded-xl border-l-4 border-emerald-500" style="background-color: #181818;">
+            <h2 class="text-2xl font-bold text-white mb-4">🎓 ¡Comienza a Explorar!</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              Ahora que conoces las funcionalidades básicas, te invitamos a experimentar
+              con el simulador. Comienza agregando algunas cargas y observa cómo se comporta
+              el campo eléctrico. Cada experimento es una oportunidad de aprendizaje.
+            </p>
+            <div class="p-4 rounded-lg border-l-4 border-yellow-500" style="background-color: #303030;">
+              <p class="text-gray-300">
+                <strong class="text-yellow-400">Recuerda:</strong> El panel de documentación se actualizará
+                automáticamente
+                con información relevante según los elementos que agregues al escenario.
+              </p>
+            </div>
+          </div>
+
+          <!-- Footer Note -->
+          <div class="text-center p-6 rounded-xl" style="background-color: #06202B;">
+            <p class="italic leading-relaxed text-blue-300">
+              ¿Tienes dudas o sugerencias? Este proyecto es parte de nuestro compromiso
+              con la educación en ciencias e ingeniería. ¡Disfruta explorando el fascinante
+              mundo del electromagnetismo!
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <script type="module" src="./src/main.ts"></script>

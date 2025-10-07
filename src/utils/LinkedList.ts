@@ -17,6 +17,23 @@ export class singlyLinkedList<ValueType> {
     private tail: Node<ValueType> | null = null;
     private length: number = 0;
 
+    public setLength(value:number) {
+        if (this.length === value) {
+            return;
+        }
+
+        if (this.length < value) {
+            return;
+        }
+
+        if (value < 0) {
+            throw new Error("Invalid list length");
+        }
+        while (this.length > value) {
+            this.remove(this.length - 1);
+        }
+    }
+
     append(value: ValueType): singlyLinkedList<ValueType> | void {
         const newNode = new Node<ValueType>(value);
         if (!this.head) {

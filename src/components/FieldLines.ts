@@ -1,7 +1,7 @@
+import type { singlyLinkedList } from "@utils/LinkedList";
+import type { Particle } from "@components/particle";
+import { Grid } from "@components/Grid";
 import type p5 from "p5";
-import { Grid } from "./Grid";
-import type { singlyLinkedList } from "../utils/LinkedList";
-import type { Particle } from "./particle";
 
 export class FieldLines {
     protected size = Grid.size;

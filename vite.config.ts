@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from "path";
 
 export default defineConfig({
+  base:"/ElectroSim/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname),

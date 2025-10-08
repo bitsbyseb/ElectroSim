@@ -1,21 +1,19 @@
-import renderMathInElement from 'katex/dist/contrib/auto-render';
 import { Equipotential } from '@components/Equipotential';
 import { ElectricFieldSensor } from '@components/Sensor';
 import { singlyLinkedList } from '@utils/LinkedList';
 import { FieldLines } from '@components/FieldLines';
 import { Particle } from '@components/particle';
+import { DocsService } from '@docs/docs.service';
 import { Grid } from '@components/Grid';
-import 'katex/dist/katex.min.css';
 import p5 from 'p5';
-import { electronDoc } from '@docs/electron';
-import { protonDoc } from '@docs/proton';
-import { welcomeDocs } from '@docs/welcome';
-import { electricFieldSensorDoc } from '@docs/electricFieldSensor';
-import { potentialSensorDoc } from '@docs/Potential';
 
+// DocsService
+const DocsServiceInstance = DocsService.instance;
+DocsServiceInstance.writeDoc("welcome");
+
+// DOM Elements
 const $canvasContainer = document.querySelector('#canvas-container') as HTMLDivElement;
 const $buttons = document.querySelector('#buttons');
-const $formulaElement = document.querySelector<HTMLDivElement>(".theory");
 const $homeDocsButton = document.querySelector<HTMLButtonElement>('#homeDocs');
 // lists
 const particles: singlyLinkedList<Particle> = new singlyLinkedList();
@@ -30,110 +28,62 @@ function sketch(p: p5) {
 
 
     $homeDocsButton?.addEventListener('click', () => {
-      if (!$formulaElement) {
-        return;
-      }
-      $formulaElement.innerHTML = "";
-      $formulaElement.innerHTML = welcomeDocs;
-      renderMathInElement($formulaElement, {
-        delimiters: [
-          { left: '\\[', right: '\\]', display: true },
-          { left: '\\(', right: '\\)', display: false }
-        ],
-        throwOnError: false,
-        ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      });
+      DocsServiceInstance.writeDoc("welcome");
     });
 
     $buttons?.addEventListener('click', e => {
       const target = e.target as HTMLElement;
       const button = target.closest('button');
-      if (button && $formulaElement) {
-        const id = button.id;
+      if (!button) {
+        return;
+      }
+      const id = button.id;
 
-        switch (id) {
-          case "electron":
-            particles.append(new Particle({
-              y: midY,
-              x: midX,
-              sign: false,
-              particles,
-              p
-            }));
+      switch (id) {
+        case "electron":
+          particles.append(new Particle({
+            y: midY,
+            x: midX,
+            sign: false,
+            particles,
+            p
+          }));
+          DocsServiceInstance.writeDoc("electron");
+          break;
 
-            $formulaElement.innerHTML = "";
-            $formulaElement.innerHTML = electronDoc;
-            renderMathInElement($formulaElement, {
-              delimiters: [
-                { left: '\\[', right: '\\]', display: true },
-                { left: '\\(', right: '\\)', display: false }
-              ],
-              throwOnError: false,
-              ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            });
-            break;
+        case "proton":
+          particles.append(new Particle({
+            y: midY,
+            x: midX,
+            sign: true,
+            particles,
+            p
+          }));
+          DocsServiceInstance.writeDoc("proton");
+          break;
 
-          case "proton":
-            particles.append(new Particle({
-              y: midY,
-              x: midX,
-              sign: true,
-              particles,
-              p
-            }));
-            $formulaElement.innerHTML = "";
-            $formulaElement.innerHTML = protonDoc;
-            renderMathInElement($formulaElement, {
-              delimiters: [
-                { left: '\\[', right: '\\]', display: true },
-                { left: '\\(', right: '\\)', display: false }
-              ],
-              throwOnError: false,
-              ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            });
-            break;
+        case "electric":
+          sensors.append(new ElectricFieldSensor(midX, midY, p, particles, sensors));
+          DocsServiceInstance.writeDoc("electric");
+          break;
 
-          case "sensor":
-            sensors.append(new ElectricFieldSensor(midX, midY, p, particles, sensors));
-            $formulaElement.innerHTML = "";
-            $formulaElement.innerHTML = electricFieldSensorDoc;
-            renderMathInElement($formulaElement, {
-              delimiters: [
-                { left: '\\[', right: '\\]', display: true },
-                { left: '\\(', right: '\\)', display: false }
-              ],
-              throwOnError: false,
-              ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            });
-            break;
-
-          case "potential":
-            potentialSensors.append(new Equipotential({
-              p,
-              y: midY,
-              x: midX,
-              particles,
-              potentialSensors
-            }));
-            $formulaElement.innerHTML = "";
-            $formulaElement.innerHTML = potentialSensorDoc;
-            renderMathInElement($formulaElement, {
-              delimiters: [
-                { left: '\\[', right: '\\]', display: true },
-                { left: '\\(', right: '\\)', display: false }
-              ],
-              throwOnError: false,
-              ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            });
-            break;
-          case "reset":
-            particles.setLength(0);
-            sensors.setLength(0);
-            potentialSensors.setLength(0);
-            break;
-          default:
-            break;
-        }
+        case "potential":
+          potentialSensors.append(new Equipotential({
+            p,
+            y: midY,
+            x: midX,
+            particles,
+            potentialSensors
+          }));
+          DocsServiceInstance.writeDoc("potential");
+          break;
+        case "reset":
+          particles.setLength(0);
+          sensors.setLength(0);
+          potentialSensors.setLength(0);
+          break;
+        default:
+          break;
       }
     });
   }

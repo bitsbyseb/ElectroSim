@@ -50,10 +50,10 @@ class ElectronDocs extends HTMLElement {
                     La carga del electrón es la <strong class="text-emphasis">carga elemental negativa</strong>:
                 </p>
                 <div class="formula-container">
-                    \[ q_e = -e = -1.602 \times 10^{-19} \text{ C} \]
+                    \\[ q_e = -e = -1.602 \\times 10^{-19} \\text{ C} \\]
                 </div>
                 <p class="formula-caption">
-                    Donde \(e\) es la magnitud de la carga elemental y C representa Coulombs.
+                    Donde \\(e\\) es la magnitud de la carga elemental y C representa Coulombs.
                 </p>
             </div>
 
@@ -63,7 +63,7 @@ class ElectronDocs extends HTMLElement {
                     La masa del electrón es:
                 </p>
                 <div class="formula-container">
-                    \[ m_e = 9.109 \times 10^{-31} \text{ kg} \]
+                    \\[ m_e = 9.109 \\times 10^{-31} \\text{ kg} \\]
                 </div>
                 <p class="formula-caption">
                     Es aproximadamente 1836 veces más ligero que un protón.
@@ -73,10 +73,10 @@ class ElectronDocs extends HTMLElement {
             <div class="property-card border-blue-light">
                 <h3 class="property-title">Spin</h3>
                 <p class="property-description">
-                    El electrón tiene spin \(\frac{1}{2}\):
+                    El electrón tiene spin \\(\\frac{1}{2}\\):
                 </p>
                 <div class="formula-container">
-                    \[ s = \frac{1}{2}\hbar \]
+                    \\[ s = \\frac{1}{2}\\hbar \\]
                 </div>
                 <p class="formula-caption">
                     Es un fermión y obedece el principio de exclusión de Pauli.
@@ -88,7 +88,7 @@ class ElectronDocs extends HTMLElement {
                 <p class="property-description text-gray-300">
                     El electrón es una <strong class="text-emphasis">partícula verdaderamente elemental</strong>. 
                     No tiene estructura interna conocida y se considera puntual hasta escalas 
-                    menores a \(10^{-18}\) metros.
+                    menores a \\(10^{-18}\\) metros.
                 </p>
             </div>
         </div>
@@ -106,7 +106,7 @@ class ElectronDocs extends HTMLElement {
         <div class="formula-section">
             <h3 class="formula-title text-highlight">Magnitud del Campo</h3>
             <div class="formula-container">
-                \[ E = \frac{k |q|}{r^2} = \frac{k e}{r^2} \]
+                \\[ E = \\frac{k |q|}{r^2} = \\frac{k e}{r^2} \\]
             </div>
             <p class="formula-caption text-center">
                 La magnitud es idéntica a la del protón, solo cambia la dirección
@@ -114,7 +114,7 @@ class ElectronDocs extends HTMLElement {
 
             <h3 class="formula-title text-highlight with-margin-top">Forma Vectorial</h3>
             <div class="text-center">
-                \[ \vec{E} = -\frac{k e}{r^2}\hat{r} \]
+                \\[ \\vec{E} = -\\frac{k e}{r^2}\\hat{r} \\]
             </div>
             <p class="formula-caption text-center mt-3">
                 El signo negativo indica que el vector apunta <strong class="text-emphasis">radialmente hacia adentro</strong> 
@@ -137,30 +137,30 @@ class ElectronDocs extends HTMLElement {
         
         <p class="card-paragraph">
             El potencial eléctrico generado por un electrón (carga negativa) en un punto 
-            a distancia \(r\) es:
+            a distancia \\(r\\) es:
         </p>
 
         <div class="formula-section">
             <div class="formula-container">
-                \[ V = \frac{k q}{r} = -\frac{k e}{r} \]
+                \\[ V = \\frac{k q}{r} = -\\frac{k e}{r} \\]
             </div>
             
             <div class="list-container">
                 <p class="list-item">
                     <span class="list-item-bullet">▸</span>
-                    <span>\(V\) es el potencial eléctrico en voltios (V)</span>
+                    <span>\\(V\\) es el potencial eléctrico en voltios (V)</span>
                 </p>
                 <p class="list-item">
                     <span class="list-item-bullet">▸</span>
-                    <span>\(k = 8.99 \times 10^9 \, \text{N}\cdot\text{m}^2/\text{C}^2\) (constante de Coulomb)</span>
+                    <span>\\(k = 8.99 \\times 10^9 \\, \\text{N}\\cdot\\text{m}^2/\\text{C}^2\\) (constante de Coulomb)</span>
                 </p>
                 <p class="list-item">
                     <span class="list-item-bullet">▸</span>
-                    <span>\(e = 1.602 \times 10^{-19}\) C (carga elemental)</span>
+                    <span>\\(e = 1.602 \\times 10^{-19}\\) C (carga elemental)</span>
                 </p>
                 <p class="list-item">
                     <span class="list-item-bullet">▸</span>
-                    <span>\(r\) es la distancia al electrón en metros</span>
+                    <span>\\(r\\) es la distancia al electrón en metros</span>
                 </p>
             </div>
         </div>
@@ -239,10 +239,10 @@ class ElectronDocs extends HTMLElement {
 
         <div class="formula-section">
             <div class="formula-container">
-                \[ \vec{F} = k \frac{q_1 q_2}{r^2}\hat{r}_{12} \]
+                \\[ \\vec{F} = k \\frac{q_1 q_2}{r^2}\\hat{r}_{12} \\]
             </div>
             <p class="formula-caption text-center">
-                Para el electrón: \(q_1 = -e\)
+                Para el electrón: \\(q_1 = -e\\)
             </p>
         </div>
 
@@ -253,7 +253,7 @@ class ElectronDocs extends HTMLElement {
                     Dos cargas negativas se <strong class="text-emphasis">repelen</strong>:
                 </p>
                 <div class="formula-container">
-                    \[ F > 0 \quad (\text{repulsión}) \]
+                    \\[ F > 0 \\quad (\\text{repulsión}) \\]
                 </div>
                 <p class="formula-caption">
                     La fuerza apunta alejando ambas cargas entre sí.
@@ -266,7 +266,7 @@ class ElectronDocs extends HTMLElement {
                     Cargas opuestas se <strong class="text-emphasis">atraen</strong>:
                 </p>
                 <div class="formula-container">
-                    \[ F &lt; 0 \quad (\text{atracción}) \]
+                    \\[ F &lt; 0 \\quad (\\text{atracción}) \\]
                 </div>
                 <p class="formula-caption">
                     La fuerza apunta acercando ambas cargas (base de los átomos).
@@ -280,25 +280,25 @@ class ElectronDocs extends HTMLElement {
         <h2 class="card-title">⚡ Energía Potencial Eléctrica</h2>
         
         <p class="card-paragraph">
-            La energía potencial eléctrica de una carga \(q\) en presencia de un electrón 
-            a distancia \(r\) es:
+            La energía potencial eléctrica de una carga \\(q\\) en presencia de un electrón 
+            a distancia \\(r\\) es:
         </p>
 
         <div class="formula-section">
             <div class="formula-container">
-                \[ U = k \frac{q_1 q_2}{r} = -\frac{k e q}{r} \]
+                \\[ U = k \\frac{q_1 q_2}{r} = -\\frac{k e q}{r} \\]
             </div>
             
             <div class="grid-container mt-4">
                 <div class="energy-note-positive">
                     <p class="text-gray-300 text-sm">
-                        <strong class="text-emphasis">Si \(q > 0\):</strong> \(U &lt; 0\) (se atraen, 
+                        <strong class="text-emphasis">Si \\(q > 0\\):</strong> \\(U &lt; 0\\) (se atraen, 
                         sistema ligado)
                     </p>
                 </div>
                 <div class="energy-note-negative">
                     <p class="text-gray-300 text-sm">
-                        <strong class="text-emphasis">Si \(q < 0\):</strong> \(U > 0\) (se repelen, 
+                        <strong class="text-emphasis">Si \\(q < 0\\):</strong> \\(U > 0\\) (se repelen, 
                         energía positiva)
                     </p>
                 </div>
@@ -308,7 +308,7 @@ class ElectronDocs extends HTMLElement {
         <div class="key-difference-note">
             <p class="text-gray-300 text-sm">
                 <strong class="text-cyan-highlight">⚛️ En el átomo de hidrógeno:</strong> La energía 
-                potencial negativa entre el protón y el electrón (\(U < 0\)) es lo que mantiene 
+                potencial negativa entre el protón y el electrón (\\(U < 0\\)) es lo que mantiene 
                 al electrón "ligado" al núcleo, formando un sistema estable.
             </p>
         </div>
@@ -326,10 +326,10 @@ class ElectronDocs extends HTMLElement {
         <div class="formula-section">
             <h3 class="formula-title text-purple-highlight">Longitud de Onda de De Broglie</h3>
             <div class="formula-container">
-                \[ \lambda = \frac{h}{p} = \frac{h}{m_e v} \]
+                \\[ \\lambda = \\frac{h}{p} = \\frac{h}{m_e v} \\]
             </div>
             <p class="formula-caption text-center">
-                Donde \(h\) es la constante de Planck, \(p\) el momento y \(v\) la velocidad
+                Donde \\(h\\) es la constante de Planck, \\(p\\) el momento y \\(v\\) la velocidad
             </p>
         </div>
 
@@ -490,13 +490,13 @@ class ElectronDocs extends HTMLElement {
                 <tbody class="table-body">
                     <tr class="table-row-dark">
                         <td class="table-cell-property">Carga</td>
-                        <td class="table-cell-center">\(-e\)</td>
-                        <td class="table-cell-center">\(+e\)</td>
+                        <td class="table-cell-center">\\(-e\\)</td>
+                        <td class="table-cell-center">\\(+e\\)</td>
                     </tr>
                     <tr class="table-row-light">
                         <td class="table-cell-property">Masa</td>
-                        <td class="table-cell-center">\(9.109 \times 10^{-31}\) kg</td>
-                        <td class="table-cell-center">\(1.673 \times 10^{-27}\) kg</td>
+                        <td class="table-cell-center">\\(9.109 \\times 10^{-31}\\) kg</td>
+                        <td class="table-cell-center">\\(1.673 \\times 10^{-27}\\) kg</td>
                     </tr>
                     <tr class="table-row-dark">
                         <td class="table-cell-property">Ubicación</td>
@@ -509,8 +509,8 @@ class ElectronDocs extends HTMLElement {
                     </tr>
                     <tr class="table-row-dark">
                         <td class="table-cell-property">Potencial</td>
-                        <td class="table-cell-center">Negativo (\(V < 0\))</td>
-                        <td class="table-cell-center">Positivo (\(V > 0\))</td>
+                        <td class="table-cell-center">Negativo (\\(V < 0\\))</td>
+                        <td class="table-cell-center">Positivo (\\(V > 0\\))</td>
                     </tr>
                     <tr class="table-row-light">
                         <td class="table-cell-property">Estructura</td>
@@ -524,8 +524,8 @@ class ElectronDocs extends HTMLElement {
                     </tr>
                     <tr class="table-row-light">
                         <td class="table-cell-property">Spin</td>
-                        <td class="table-cell-center">\(\frac{1}{2}\)</td>
-                        <td class="table-cell-center">\(\frac{1}{2}\)</td>
+                        <td class="table-cell-center">\\(\\frac{1}{2}\\)</td>
+                        <td class="table-cell-center">\\(\\frac{1}{2}\\)</td>
                     </tr>
                 </tbody>
             </table>
@@ -550,42 +550,42 @@ class ElectronDocs extends HTMLElement {
 
         <div class="list-container">
             <div class="quantum-card">
-                <h4 class="quantum-title">1. Número Cuántico Principal (\(n\))</h4>
+                <h4 class="quantum-title">1. Número Cuántico Principal (\\(n\\))</h4>
                 <p class="text-gray-300 text-sm">
                     Determina el nivel de energía y el tamaño del orbital.
                 </p>
                 <div class="text-center">
-                    \[ n = 1, 2, 3, 4, \ldots \]
+                    \\[ n = 1, 2, 3, 4, \\ldots \\]
                 </div>
             </div>
 
             <div class="quantum-card">
-                <h4 class="quantum-title">2. Número Cuántico Azimutal (\(l\))</h4>
+                <h4 class="quantum-title">2. Número Cuántico Azimutal (\\(l\\))</h4>
                 <p class="text-gray-300 text-sm">
                     Define la forma del orbital (s, p, d, f).
                 </p>
                 <div class="text-center">
-                    \[ l = 0, 1, 2, \ldots, (n-1) \]
+                    \\[ l = 0, 1, 2, \\ldots, (n-1) \\]
                 </div>
             </div>
 
             <div class="quantum-card">
-                <h4 class="quantum-title">3. Número Cuántico Magnético (\(m_l\))</h4>
+                <h4 class="quantum-title">3. Número Cuántico Magnético (\\(m_l\\))</h4>
                 <p class="text-gray-300 text-sm">
                     Especifica la orientación espacial del orbital.
                 </p>
                 <div class="text-center">
-                    \[ m_l = -l, \ldots, 0, \ldots, +l \]
+                    \\[ m_l = -l, \\ldots, 0, \\ldots, +l \\]
                 </div>
             </div>
 
             <div class="quantum-card">
-                <h4 class="quantum-title">4. Número Cuántico de Spin (\(m_s\))</h4>
+                <h4 class="quantum-title">4. Número Cuántico de Spin (\\(m_s\\))</h4>
                 <p class="text-gray-300 text-sm">
                     Describe el spin intrínseco del electrón.
                 </p>
                 <div class="text-center">
-                    \[ m_s = +\frac{1}{2} \text{ o } -\frac{1}{2} \]
+                    \\[ m_s = +\\frac{1}{2} \\text{ o } -\\frac{1}{2} \\]
                 </div>
             </div>
         </div>
@@ -611,11 +611,11 @@ class ElectronDocs extends HTMLElement {
         <div class="formula-section">
             <h3 class="formula-title text-highlight">Corriente Eléctrica</h3>
             <div class="formula-container">
-                \[ I = \frac{\Delta Q}{\Delta t} = \frac{n \cdot e}{\Delta t} \]
+                \\[ I = \\frac{\\Delta Q}{\\Delta t} = \\frac{n \\cdot e}{\\Delta t} \\]
             </div>
             <p class="formula-caption text-center">
-                Donde \(I\) es la corriente en Amperes, \(\Delta Q\) es la carga que pasa 
-                en un tiempo \(\Delta t\), y \(n\) es el número de electrones
+                Donde \\(I\\) es la corriente en Amperes, \\(\\Delta Q\\) es la carga que pasa 
+                en un tiempo \\(\\Delta t\\), y \\(n\\) es el número de electrones
             </p>
         </div>
 
@@ -623,7 +623,7 @@ class ElectronDocs extends HTMLElement {
             <div class="property-card border-blue-light">
                 <h4 class="sub-property-title">🐌 Velocidad de Deriva</h4>
                 <p class="sub-property-description">
-                    Los electrones en un conductor se mueven muy lentamente (\(\sim 10^{-4}\) m/s), 
+                    Los electrones en un conductor se mueven muy lentamente (\\(\\sim 10^{-4}\\) m/s), 
                     aunque la señal eléctrica viaja a velocidades cercanas a la luz.
                 </p>
             </div>
@@ -640,7 +640,7 @@ class ElectronDocs extends HTMLElement {
         <div class="curiosity-note">
             <p class="text-gray-300 text-sm">
                 <strong class="text-yellow-highlight">💡 Curiosidad:</strong> Un Ampere (1 A) de corriente 
-                representa aproximadamente \(6.24 \times 10^{18}\) electrones pasando por un punto 
+                representa aproximadamente \\(6.24 \\times 10^{18}\\) electrones pasando por un punto 
                 cada segundo. ¡Son trillones de electrones!
             </p>
         </div>
@@ -658,11 +658,11 @@ class ElectronDocs extends HTMLElement {
         <div class="formula-section">
             <h3 class="formula-title text-cyan-highlight">Masa Relativista</h3>
             <div class="formula-container">
-                \[ m = \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}} = \gamma m_0 \]
+                \\[ m = \\frac{m_0}{\\sqrt{1 - \\frac{v^2}{c^2}}} = \\gamma m_0 \\]
             </div>
             <p class="formula-caption text-center">
-                Donde \(m_0\) es la masa en reposo, \(v\) la velocidad, \(c\) la velocidad de la luz, 
-                y \(\gamma\) el factor de Lorentz
+                Donde \\(m_0\\) es la masa en reposo, \\(v\\) la velocidad, \\(c\\) la velocidad de la luz, 
+                y \\(\\gamma\\) el factor de Lorentz
             </p>
         </div>
 
@@ -681,15 +681,15 @@ class ElectronDocs extends HTMLElement {
         <h2 class="card-title">🌌 Antimateria: El Positrón</h2>
         
         <p class="card-paragraph">
-            El electrón tiene una antipartícula llamada <strong class="text-emphasis">positrón</strong> (\(e^+\)), 
+            El electrón tiene una antipartícula llamada <strong class="text-emphasis">positrón</strong> (\\(e^+\\)), 
             que tiene la misma masa pero carga opuesta.
         </p>
 
         <div class="grid-container">
             <div class="antimatter-card border-blue-light">
-                <h4 class="antimatter-title text-highlight">Electrón (\(e^-\)</h4>
+                <h4 class="antimatter-title text-highlight">Electrón (\\(e^-\\)</h4>
                 <ul class="antimatter-list">
-                    <li>• Carga: \(-e\)</li>
+                    <li>• Carga: \\(-e\\)</li>
                     <li>• Materia ordinaria</li>
                     <li>• Estable</li>
                     <li>• Abundante en el universo</li>
@@ -697,9 +697,9 @@ class ElectronDocs extends HTMLElement {
             </div>
 
             <div class="antimatter-card border-purple-light">
-                <h4 class="antimatter-title text-purple-highlight">Positrón (\(e^+\)</h4>
+                <h4 class="antimatter-title text-purple-highlight">Positrón (\\(e^+\\)</h4>
                 <ul class="antimatter-list">
-                    <li>• Carga: \(+e\)</li>
+                    <li>• Carga: \\(+e\\)</li>
                     <li>• Antimateria</li>
                     <li>• Se aniquila con electrones</li>
                     <li>• Raro naturalmente</li>
@@ -710,10 +710,10 @@ class ElectronDocs extends HTMLElement {
         <div class="formula-section">
             <h3 class="formula-title text-purple-highlight">Aniquilación Electrón-Positrón</h3>
             <div class="formula-container">
-                \[ e^- + e^+ \rightarrow 2\gamma \quad (\text{dos fotones de energía}) \]
+                \\[ e^- + e^+ \\rightarrow 2\\gamma \\quad (\\text{dos fotones de energía}) \\]
             </div>
             <div class="text-center">
-                \[ E = 2m_e c^2 = 1.022 \text{ MeV} \]
+                \\[ E = 2m_e c^2 = 1.022 \\text{ MeV} \\]
             </div>
             <p class="formula-caption text-center mt-3">
                 La masa de ambas partículas se convierte completamente en energía (rayos gamma)
@@ -747,7 +747,7 @@ class ElectronDocs extends HTMLElement {
                 <div class="fun-fact-icon">⚡</div>
                 <h4 class="fun-fact-title">Velocidad en Átomos</h4>
                 <p class="text-gray-300 text-sm">
-                    Los electrones en átomos se mueven a velocidades de aproximadamente \(2.2 \times 10^6\) m/s, 
+                    Los electrones en átomos se mueven a velocidades de aproximadamente \\(2.2 \\times 10^6\\) m/s, 
                     cerca del 1% de la velocidad de la luz.
                 </p>
             </div>
@@ -797,7 +797,7 @@ class ElectronDocs extends HTMLElement {
             <div class="summary-item">
                 <p class="text-gray-300 text-sm">
                     <strong class="text-emphasis">Carga:</strong><br>
-                    \(-e = -1.602 \times 10^{-19}\) C
+                    \\(-e = -1.602 \\times 10^{-19}\\) C
                 </p>
             </div>
             <div class="summary-item">

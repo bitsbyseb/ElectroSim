@@ -49,10 +49,10 @@ class PotentialDocs extends HTMLElement {
                 eléctrica por unidad de carga</strong> en ese punto:
             </p>
             <div class="potential-formula-content">
-                \[ V = \frac{U}{q_0} \]
+                \\[ V = \\frac{U}{q_0} \\]
             </div>
             <p class="potential-formula-note">
-                Donde \(U\) es la energía potencial y \(q_0\) es una carga de prueba
+                Donde \\(U\\) es la energía potencial y \\(q_0\\) es una carga de prueba
             </p>
         </div>
 
@@ -63,15 +63,15 @@ class PotentialDocs extends HTMLElement {
                     Se mide en <strong class="potential-text-white">Voltios (V)</strong>:
                 </p>
                 <div class="potential-text-center potential-text-sm">
-                    \[ 1 \text{ V} = 1 \frac{\text{J}}{\text{C}} \]
+                    \\[ 1 \\text{ V} = 1 \\frac{\\text{J}}{\\text{C}} \\]
                 </div>
             </div>
 
             <div class="potential-property-card">
                 <h4 class="potential-property-title">🎯 Signo</h4>
                 <p class="potential-property-text">
-                    \(V > 0\) cerca de cargas positivas<br>
-                    \(V < 0\) cerca de cargas negativas
+                    \\(V > 0\\) cerca de cargas positivas<br>
+                    \\(V < 0\\) cerca de cargas negativas
                 </p>
             </div>
         </div>
@@ -85,20 +85,20 @@ class PotentialDocs extends HTMLElement {
             <div class="potential-formula-box">
                 <h3 class="potential-formula-title">Potencial de una Carga Puntual</h3>
                 <div class="potential-formula-content">
-                    \[ V = \frac{kQ}{r} \]
+                    \\[ V = \\frac{kQ}{r} \\]
                 </div>
                 <div class="potential-formula-list">
-                    <p>• \(V\) = Potencial eléctrico (V)</p>
-                    <p>• \(k = 8.99 \times 10^9\) N·m²/C²</p>
-                    <p>• \(Q\) = Carga fuente (C)</p>
-                    <p>• \(r\) = Distancia a la carga (m)</p>
+                    <p>• \\(V\\) = Potencial eléctrico (V)</p>
+                    <p>• \\(k = 8.99 \\times 10^9\\) N·m²/C²</p>
+                    <p>• \\(Q\\) = Carga fuente (C)</p>
+                    <p>• \\(r\\) = Distancia a la carga (m)</p>
                 </div>
             </div>
 
             <div class="potential-formula-box">
                 <h3 class="potential-formula-title">Principio de Superposición</h3>
                 <div class="potential-formula-content">
-                    \[ V_{\text{total}} = \sum_{i=1}^{n} \frac{kQ_i}{r_i} \]
+                    \\[ V_{\\text{total}} = \\sum_{i=1}^{n} \\frac{kQ_i}{r_i} \\]
                 </div>
                 <p class="potential-formula-note">
                     Suma algebraica simple (no vectorial)
@@ -108,7 +108,7 @@ class PotentialDocs extends HTMLElement {
             <div class="potential-formula-box">
                 <h3 class="potential-formula-title">Relación con el Campo Eléctrico</h3>
                 <div class="potential-formula-content">
-                    \[ \vec{E} = -\nabla V \]
+                    \\[ \\vec{E} = -\\nabla V \\]
                 </div>
                 <p class="potential-formula-note">
                     El campo apunta donde el potencial disminuye más rápido
@@ -148,28 +148,28 @@ class PotentialDocs extends HTMLElement {
             <div class="potential-interpretation-card potential-card-red">
                 <h4 class="potential-card-title potential-title-red">🔴 Cerca de Carga Positiva</h4>
                 <p class="potential-property-text">
-                    \(V\) es positivo y alto. Disminuye con \(1/r\) al alejarse.
+                    \\(V\\) es positivo y alto. Disminuye con \\(1/r\\) al alejarse.
                 </p>
             </div>
 
             <div class="potential-interpretation-card potential-card-blue">
                 <h4 class="potential-card-title potential-title-blue">🔵 Cerca de Carga Negativa</h4>
                 <p class="potential-property-text">
-                    \(V\) es negativo. Se hace menos negativo al alejarse.
+                    \\(V\\) es negativo. Se hace menos negativo al alejarse.
                 </p>
             </div>
 
             <div class="potential-interpretation-card potential-card-purple">
                 <h4 class="potential-card-title potential-title-purple">🔴🔵 Entre Cargas Opuestas</h4>
                 <p class="potential-property-text">
-                    Existe un punto donde \(V = 0\) (equilibrio de potenciales).
+                    Existe un punto donde \\(V = 0\\) (equilibrio de potenciales).
                 </p>
             </div>
 
             <div class="potential-interpretation-card potential-card-yellow">
                 <h4 class="potential-card-title potential-title-yellow">🔴🔴 o 🔵🔵 Mismo Signo</h4>
                 <p class="potential-property-text">
-                    Los potenciales se suman. Nunca hay un punto con \(V = 0\) entre ellas.
+                    Los potenciales se suman. Nunca hay un punto con \\(V = 0\\) entre ellas.
                 </p>
             </div>
         </div>
@@ -209,13 +209,13 @@ class PotentialDocs extends HTMLElement {
             </div>
 
             <div class="potential-usecase-card">
-                <strong class="potential-usecase-title">📏 Ley \(1/r\):</strong>
-                <span class="potential-text"> Observa cómo el potencial disminuye con \(1/r\) 
-                (más lento que el campo que va con \(1/r^2\)).</span>
+                <strong class="potential-usecase-title">📏 Ley \\(1/r\\):</strong>
+                <span class="potential-text"> Observa cómo el potencial disminuye con \\(1/r\\) 
+                (más lento que el campo que va con \\(1/r^2\\)).</span>
             </div>
 
             <div class="potential-usecase-card">
-                <strong class="potential-usecase-title">⚡ Diferencias \(\Delta V\):</strong>
+                <strong class="potential-usecase-title">⚡ Diferencias \\(\\Delta V\\):</strong>
                 <span class="potential-text"> Usa dos sensores para calcular voltajes. 
                 Esta diferencia determina el trabajo para mover cargas.</span>
             </div>
@@ -238,18 +238,18 @@ class PotentialDocs extends HTMLElement {
                 <ul class="potential-list">
                     <li>• Magnitud escalar</li>
                     <li>• Unidades: Voltios (V)</li>
-                    <li>• Disminuye con \(1/r\)</li>
+                    <li>• Disminuye con \\(1/r\\)</li>
                     <li>• Suma algebraica simple</li>
                     <li>• Más fácil de calcular</li>
                 </ul>
             </div>
 
             <div class="potential-comparison-card">
-                <h4 class="potential-comparison-title potential-title-orange">📏 Campo (\(\vec{E}\))</h4>
+                <h4 class="potential-comparison-title potential-title-orange">📏 Campo (\\(\\vec{E}\\))</h4>
                 <ul class="potential-list">
                     <li>• Magnitud vectorial</li>
                     <li>• Unidades: N/C o V/m</li>
-                    <li>• Disminuye con \(1/r^2\)</li>
+                    <li>• Disminuye con \\(1/r^2\\)</li>
                     <li>• Suma vectorial compleja</li>
                     <li>• Más complejo de calcular</li>
                 </ul>
@@ -259,7 +259,7 @@ class PotentialDocs extends HTMLElement {
         <div class="potential-mt-4 potential-interpretation-card potential-card-cyan">
             <p class="potential-property-text">
                 <strong class="potential-title-cyan">🔗 Relación:</strong> 
-                \(\vec{E} = -\nabla V\). El campo apunta donde el potencial disminuye. 
+                \\(\\vec{E} = -\\nabla V\\). El campo apunta donde el potencial disminuye. 
                 Las líneas equipotenciales son perpendiculares a las líneas de campo.
             </p>
         </div>
@@ -273,20 +273,20 @@ class PotentialDocs extends HTMLElement {
             <div class="potential-formula-box">
                 <h3 class="potential-formula-title">Energía Potencial</h3>
                 <div class="potential-formula-content">
-                    \[ U = qV \]
+                    \\[ U = qV \\]
                 </div>
                 <p class="potential-formula-note">
-                    Energía de una carga \(q\) en potencial \(V\)
+                    Energía de una carga \\(q\\) en potencial \\(V\\)
                 </p>
             </div>
 
             <div class="potential-formula-box">
                 <h3 class="potential-formula-title">Trabajo</h3>
                 <div class="potential-formula-content">
-                    \[ W = q\Delta V \]
+                    \\[ W = q\\Delta V \\]
                 </div>
                 <p class="potential-formula-note">
-                    Trabajo para mover carga \(q\) con diferencia \(\Delta V\)
+                    Trabajo para mover carga \\(q\\) con diferencia \\(\\Delta V\\)
                 </p>
             </div>
         </div>
@@ -342,7 +342,7 @@ class PotentialDocs extends HTMLElement {
             <div class="potential-summary-item">
                 <p class="potential-summary-text">
                     <strong class="potential-text-white">Disminución:</strong><br>
-                    Proporcional a \(1/r\)
+                    Proporcional a \\(1/r\\)
                 </p>
             </div>
         </div>

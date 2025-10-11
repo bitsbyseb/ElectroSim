@@ -50,10 +50,10 @@ class ProtonDocs extends HTMLElement {
                     La carga del protón es la <strong class="proton-text-white">carga elemental positiva</strong>:
                 </p>
                 <div class="proton-formula-content">
-                    \[ q_p = +e = +1.602 \times 10^{-19} \text{ C} \]
+                    \\\[ q_p = +e = +1.602 \\\times 10^{-19} \\\text{ C} \\\]
                 </div>
                 <p class="proton-property-note">
-                    Donde \(e\) es la magnitud de la carga elemental y C representa Coulombs.
+                    Donde \\\(e\\\) es la magnitud de la carga elemental y C representa Coulombs.
                 </p>
             </div>
 
@@ -63,7 +63,7 @@ class ProtonDocs extends HTMLElement {
                     La masa del protón es aproximadamente:
                 </p>
                 <div class="proton-formula-content">
-                    \[ m_p = 1.673 \times 10^{-27} \text{ kg} \]
+                    \\\[ m_p = 1.673 \\\times 10^{-27} \\\text{ kg} \\\]
                 </div>
                 <p class="proton-property-note">
                     Es aproximadamente 1836 veces más pesado que un electrón.
@@ -74,7 +74,7 @@ class ProtonDocs extends HTMLElement {
                 <h3 class="proton-property-title">Estabilidad</h3>
                 <p class="proton-property-text">
                     El protón es una partícula <strong class="proton-text-white">extremadamente estable</strong>. 
-                    Su vida media es mayor que la edad del universo (\( > 10^{34} \) años), 
+                    Su vida media es mayor que la edad del universo (\\\( > 10^{34} \\\) años), 
                     lo que lo hace esencialmente estable para propósitos prácticos.
                 </p>
             </div>
@@ -93,25 +93,25 @@ class ProtonDocs extends HTMLElement {
         <div class="proton-formula-box">
             <h3 class="proton-formula-title">Magnitud del Campo</h3>
             <div class="proton-formula-content">
-                \[ E = \frac{k |q|}{r^2} = \frac{k e}{r^2} \]
+                \\[ E = \\frac{k |q|}{r^2} = \\frac{k e}{r^2} \\]
             </div>
             <p class="proton-formula-note proton-mb-4">
-                Donde \(k\) es la constante de Coulomb y \(r\) es la distancia a la carga
+                Donde \\(k\\) es la constante de Coulomb y \\(r\\) es la distancia a la carga
             </p>
 
             <h3 class="proton-formula-title proton-formula-spacing">Forma Vectorial</h3>
             <div class="proton-formula-content">
-                \[ \vec{E} = \frac{k q}{r^2}\hat{r} \]
+                \\[ \\vec{E} = \\frac{k q}{r^2}\\hat{r} \\]
             </div>
             <p class="proton-formula-note proton-mt-4">
-                El vector \(\hat{r}\) apunta <strong class="proton-text-white">radialmente hacia afuera</strong> desde el protón
+                El vector \\(\\hat{r}\\) apunta <strong class="proton-text-white">radialmente hacia afuera</strong> desde el protón
             </p>
         </div>
 
         <div class="proton-info-box proton-info-blue">
             <p class="proton-text">
                 <strong class="proton-info-title">💡 Nota importante:</strong> El campo eléctrico disminuye con 
-                el cuadrado de la distancia (\(\frac{1}{r^2}\)), conocida como la 
+                el cuadrado de la distancia (\\(\\frac{1}{r^2}\\)), conocida como la 
                 <strong class="proton-text-white">ley del inverso del cuadrado</strong>.
             </p>
         </div>
@@ -123,30 +123,30 @@ class ProtonDocs extends HTMLElement {
         
         <p class="proton-text proton-mb-4">
             El potencial eléctrico generado por un protón (carga positiva) en un punto 
-            a distancia \(r\) es:
+            a distancia \\(r\\) es:
         </p>
 
         <div class="proton-formula-box">
             <div class="proton-formula-content proton-mb-4">
-                \[ V = \frac{k q}{r} = \frac{k e}{r} \]
+                \\[ V = \\frac{k q}{r} = \\frac{k e}{r} \\]
             </div>
             
             <div class="proton-variable-list">
                 <p class="proton-variable-item">
                     <span class="proton-variable-bullet">▸</span>
-                    <span>\(V\) es el potencial eléctrico en voltios (V)</span>
+                    <span>\\(V\\) es el potencial eléctrico en voltios (V)</span>
                 </p>
                 <p class="proton-variable-item">
                     <span class="proton-variable-bullet">▸</span>
-                    <span>\(k = 8.99 \times 10^9 \, \text{N}\cdot\text{m}^2/\text{C}^2\) (constante de Coulomb)</span>
+                    <span>\\(k = 8.99 \\times 10^9 \\, \\text{N}\\cdot\\text{m}^2/\\text{C}^2\\) (constante de Coulomb)</span>
                 </p>
                 <p class="proton-variable-item">
                     <span class="proton-variable-bullet">▸</span>
-                    <span>\(e = 1.602 \times 10^{-19}\) C (carga elemental)</span>
+                    <span>\\(e = 1.602 \\times 10^{-19}\\) C (carga elemental)</span>
                 </p>
                 <p class="proton-variable-item">
                     <span class="proton-variable-bullet">▸</span>
-                    <span>\(r\) es la distancia al protón en metros</span>
+                    <span>\\(r\\) es la distancia al protón en metros</span>
                 </p>
             </div>
         </div>
@@ -154,8 +154,8 @@ class ProtonDocs extends HTMLElement {
         <div class="proton-info-box proton-info-yellow">
             <p class="proton-text">
                 <strong class="proton-info-title">⚠️ Característica:</strong> El potencial de una carga positiva 
-                es siempre <strong class="proton-text-white">positivo</strong> y disminuye con \(\frac{1}{r}\) 
-                (no con \(\frac{1}{r^2}\) como el campo).
+                es siempre <strong class="proton-text-white">positivo</strong> y disminuye con \\(\\frac{1}{r}\\) 
+                (no con \\(\\frac{1}{r^2}\\) como el campo).
             </p>
         </div>
     </div>
@@ -217,10 +217,10 @@ class ProtonDocs extends HTMLElement {
 
         <div class="proton-formula-box proton-mb-4">
             <div class="proton-formula-content proton-mb-4">
-                \[ \vec{F} = k \frac{q_1 q_2}{r^2}\hat{r}_{12} \]
+                \\[ \\vec{F} = k \\frac{q_1 q_2}{r^2}\\hat{r}_{12} \\]
             </div>
             <p class="proton-formula-note">
-                Donde \(q_1\) y \(q_2\) son las magnitudes de las cargas
+                Donde \\(q_1\\) y \\(q_2\\) son las magnitudes de las cargas
             </p>
         </div>
 
@@ -231,7 +231,7 @@ class ProtonDocs extends HTMLElement {
                     Dos cargas positivas se <strong class="proton-text-white">repelen</strong>:
                 </p>
                 <div class="proton-formula-content">
-                    \[ F > 0 \quad (\text{repulsión}) \]
+                    \\[ F > 0 \\quad (\\text{repulsión}) \\]
                 </div>
                 <p class="proton-property-note">
                     La fuerza apunta alejando ambas cargas entre sí.
@@ -244,7 +244,7 @@ class ProtonDocs extends HTMLElement {
                     Cargas opuestas se <strong class="proton-text-white">atraen</strong>:
                 </p>
                 <div class="proton-formula-content">
-                    \[ F < 0 \quad (\text{atracción}) \]
+                    \\[ F < 0 \\quad (\\text{atracción}) \\]
                 </div>
                 <p class="proton-property-note">
                     La fuerza apunta acercando ambas cargas.
@@ -258,14 +258,14 @@ class ProtonDocs extends HTMLElement {
         <h2 class="proton-section-title">🔬 La Carga Elemental</h2>
         
         <p class="proton-text proton-mb-4">
-            La <strong class="proton-text-cyan">carga elemental</strong> \(e\) es la unidad fundamental 
+            La <strong class="proton-text-cyan">carga elemental</strong> \\(e\\) es la unidad fundamental 
             de carga eléctrica en la naturaleza. Es la magnitud de la carga del protón (positiva) 
             y del electrón (negativa).
         </p>
 
         <div class="proton-formula-box proton-mb-4">
             <div class="proton-formula-content proton-mb-4">
-                \[ e = 1.602176634 \times 10^{-19} \text{ C} \]
+                \\[ e = 1.602176634 \\times 10^{-19} \\text{ C} \\]
             </div>
             <p class="proton-formula-note">
                 Valor exacto definido desde 2019 por el Sistema Internacional de Unidades
@@ -279,7 +279,7 @@ class ProtonDocs extends HTMLElement {
                     Toda carga eléctrica observable es un múltiplo entero de la carga elemental:
                 </p>
                 <div class="proton-formula-content">
-                    \[ Q = n \cdot e \quad \text{donde } n \in \mathbb{Z} \]
+                    \\[ Q = n \\cdot e \\quad \\text{donde } n \\in \\mathbb{Z} \\]
                 </div>
             </div>
 
@@ -287,8 +287,8 @@ class ProtonDocs extends HTMLElement {
                 <h4 class="proton-charge-title">🎯 Constante Fundamental</h4>
                 <p class="proton-charge-text">
                     La carga elemental es una de las <strong class="proton-text-white">constantes fundamentales 
-                    de la naturaleza</strong>, junto con la velocidad de la luz \(c\) y la constante 
-                    de Planck \(h\).
+                    de la naturaleza</strong>, junto con la velocidad de la luz \\(c\\) y la constante 
+                    de Planck \\(h\\).
                 </p>
             </div>
         </div>
@@ -299,25 +299,25 @@ class ProtonDocs extends HTMLElement {
         <h2 class="proton-section-title">⚡ Energía Potencial Eléctrica</h2>
         
         <p class="proton-text proton-mb-4">
-            La energía potencial eléctrica de una carga \(q\) en presencia de un protón 
-            a distancia \(r\) es:
+            La energía potencial eléctrica de una carga \\(q\\) en presencia de un protón 
+            a distancia \\(r\\) es:
         </p>
 
         <div class="proton-formula-box">
             <div class="proton-formula-content proton-mb-4">
-                \[ U = k \frac{q_1 q_2}{r} = \frac{k e q}{r} \]
+                \\[ U = k \\frac{q_1 q_2}{r} = \\frac{k e q}{r} \\]
             </div>
             
             <div class="proton-energy-grid">
                 <div class="proton-energy-card proton-energy-red">
                     <p class="proton-fieldline-text">
-                        <strong class="proton-text-white">Si \(q > 0\):</strong> \(U > 0\) (se repelen, 
+                        <strong class="proton-text-white">Si \\(q > 0\\):</strong> \\(U > 0\\) (se repelen, 
                         energía positiva)
                     </p>
                 </div>
                 <div class="proton-energy-card proton-energy-blue">
                     <p class="proton-fieldline-text">
-                        <strong class="proton-text-white">Si \(q < 0\):</strong> \(U < 0\) (se atraen, 
+                        <strong class="proton-text-white">Si \\(q < 0\\):</strong> \\(U < 0\\) (se atraen, 
                         energía negativa)
                     </p>
                 </div>
@@ -326,8 +326,8 @@ class ProtonDocs extends HTMLElement {
 
         <div class="proton-info-box proton-info-yellow">
             <p class="proton-fieldline-text">
-                <strong class="proton-info-title">💡 Interpretación:</strong> Cuando \(U > 0\), 
-                se requiere energía para mantener las cargas juntas. Cuando \(U < 0\), 
+                <strong class="proton-info-title">💡 Interpretación:</strong> Cuando \\(U > 0\\), 
+                se requiere energía para mantener las cargas juntas. Cuando \\(U < 0\\), 
                 se libera energía cuando las cargas se acercan.
             </p>
         </div>
@@ -359,7 +359,7 @@ class ProtonDocs extends HTMLElement {
             <div class="proton-tip-card">
                 <strong class="proton-tip-title">📍 Usa sensores:</strong>
                 <span class="proton-text"> Coloca sensores de campo a diferentes distancias del 
-                protón para visualizar cómo disminuye la intensidad con \(1/r^2\).</span>
+                protón para visualizar cómo disminuye la intensidad con \\(1/r^2\\).</span>
             </div>
         </div>
     </div>
@@ -395,7 +395,7 @@ class ProtonDocs extends HTMLElement {
             <div class="proton-summary-item">
                 <p class="proton-summary-text">
                     <strong class="proton-text-white">Carga:</strong><br>
-                    \(+e = +1.602 \times 10^{-19}\) C
+                    \\(+e = +1.602 \\times 10^{-19}\\) C
                 </p>
             </div>
             <div class="proton-summary-item">

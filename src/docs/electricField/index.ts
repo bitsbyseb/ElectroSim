@@ -50,7 +50,7 @@ class ElectricFieldDocs extends HTMLElement {
             </p>
             
             <div class="formula-container">
-                \( \vec{E}_{\text{total}} = \sum_{i=1}^{n} \vec{E}_i = \sum_{i=1}^{n} \frac{kQ_i}{r_i^2}\hat{r}_i \)
+                \\( \\vec{E}_{\\text{total}} = \\sum_{i=1}^{n} \\vec{E}_i = \\sum_{i=1}^{n} \\frac{kQ_i}{r_i^2}\\hat{r}_i \\)
             </div>
             
             <p class="formula-caption text-center">
@@ -101,14 +101,14 @@ class ElectricFieldDocs extends HTMLElement {
             <div class="formula-section">
                 <h3 class="formula-title text-highlight-orange">Campo de una Carga Puntual</h3>
                 <div class="formula-container">
-                    \( \vec{E} = \frac{kQ}{r^2}\hat{r} \)
+                    \\( \\vec{E} = \\frac{kQ}{r^2}\\hat{r} \\)
                 </div>
                 <div class="list-container text-sm text-gray-300">
-                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\(\vec{E}\) = Vector de campo eléctrico (N/C)</span></p>
-                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\(k = 8.99 \times 10^9\) N·m²/C² = Constante de Coulomb</span></p>
-                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\(Q\) = Carga fuente (C)</span></p>
-                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\(r\) = Distancia a la carga (m)</span></p>
-                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\(\hat{r}\) = Vector unitario radial</span></p>
+                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\\(\\vec{E}\\) = Vector de campo eléctrico (N/C)</span></p>
+                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\\(k = 8.99 \\times 10^9\\) N·m²/C² = Constante de Coulomb</span></p>
+                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\\(Q\\) = Carga fuente (C)</span></p>
+                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\\(r\\) = Distancia a la carga (m)</span></p>
+                    <p class="list-item"><span class="list-item-bullet-orange">▸</span><span>\\(\\hat{r}\\) = Vector unitario radial</span></p>
                 </div>
             </div>
 
@@ -119,7 +119,7 @@ class ElectricFieldDocs extends HTMLElement {
                     de todos los campos individuales:
                 </p>
                 <div class="formula-container">
-                    \( \vec{E}_{\text{total}} = \vec{E}_1 + \vec{E}_2 + \vec{E}_3 + \cdots + \vec{E}_n \)
+                    \\( \\vec{E}_{\\text{total}} = \\vec{E}_1 + \\vec{E}_2 + \\vec{E}_3 + \\cdots + \\vec{E}_n \\)
                 </div>
                 <p class="formula-caption text-center">
                     Esta es la operación que el sensor realiza automáticamente
@@ -129,18 +129,18 @@ class ElectricFieldDocs extends HTMLElement {
             <div class="formula-section">
                 <h3 class="formula-title text-highlight-orange">Componentes Cartesianas</h3>
                 <p class="card-paragraph">
-                    El campo eléctrico se puede descomponer en componentes \(x\) e \(y\):
+                    El campo eléctrico se puede descomponer en componentes \\(x\\) e \\(y\\):
                 </p>
                 <div class="grid-container">
                     <div class="text-center">
-                        \( E_x = E \cos(\theta) \)
+                        \\( E_x = E \\cos(\\theta) \\)
                     </div>
                     <div class="text-center">
-                        \( E_y = E \sin(\theta) \)
+                        \\( E_y = E \\sin(\\theta) \\)
                     </div>
                 </div>
                 <p class="formula-caption text-center mt-3">
-                    Donde \(\theta\) es el ángulo con respecto al eje \(x\)
+                    Donde \\(\\theta\\) es el ángulo con respecto al eje \\(x\\)
                 </p>
             </div>
         </div>
@@ -155,7 +155,7 @@ class ElectricFieldDocs extends HTMLElement {
                 <h4 class="interpretation-title text-blue">🔴 Cerca de una Carga Positiva</h4>
                 <p class="text-sm text-gray-300">
                     La flecha apunta <strong class="text-emphasis">hacia afuera</strong> (alejándose de la carga). 
-                    Muy larga cerca de la carga, disminuye rápidamente con la distancia (\(\propto 1/r^2\)).
+                    Muy larga cerca de la carga, disminuye rápidamente con la distancia (\\(\\propto 1/r^2\\)).
                 </p>
             </div>
 
@@ -214,7 +214,7 @@ class ElectricFieldDocs extends HTMLElement {
             <div class="tip-card border-emerald">
                 <strong class="text-emerald-highlight">📏 Ley del Inverso del Cuadrado:</strong>
                 <span class="text-gray-300"> Coloca sensores a diferentes distancias de una carga y observa 
-                cómo la longitud de la flecha disminuye con \(1/r^2\).</span>
+                cómo la longitud de la flecha disminuye con \\(1/r^2\\).</span>
             </div>
 
             <div class="tip-card border-emerald">
@@ -249,10 +249,10 @@ class ElectricFieldDocs extends HTMLElement {
                 una carga de prueba en ese punto:
             </p>
             <div class="formula-container">
-                \( \vec{E} = \frac{\vec{F}}{q_0} \)
+                \\( \\vec{E} = \\frac{\\vec{F}}{q_0} \\)
             </div>
             <p class="formula-caption text-center">
-                Donde \(\vec{F}\) es la fuerza sobre una carga de prueba \(q_0\)
+                Donde \\(\\vec{F}\\) es la fuerza sobre una carga de prueba \\(q_0\\)
             </p>
         </div>
 
@@ -286,7 +286,7 @@ class ElectricFieldDocs extends HTMLElement {
                 <h4 class="application-title text-cyan-highlight">📐 Gradiente del Potencial</h4>
                 <p class="text-sm text-gray-300">
                     El campo eléctrico apunta en la dirección donde el potencial disminuye 
-                    más rápidamente: \(\vec{E} = -\nabla V\)
+                    más rápidamente: \\(\\vec{E} = -\\nabla V\\)
                 </p>
             </div>
         </div>
@@ -299,22 +299,22 @@ class ElectricFieldDocs extends HTMLElement {
         <div class="formula-section mb-4">
             <p class="card-paragraph">
                 Si conoces el campo eléctrico en un punto, puedes calcular la fuerza sobre 
-                cualquier carga \(q\) en ese punto:
+                cualquier carga \\(q\\) en ese punto:
             </p>
             <div class="formula-container">
-                \( \vec{F} = q\vec{E} \)
+                \\( \\vec{F} = q\\vec{E} \\)
             </div>
             
             <div class="grid-container">
                 <div class="force-card border-green">
                     <p class="text-sm text-gray-300">
-                        <strong class="text-emphasis">Si \(q > 0\):</strong><br>
+                        <strong class="text-emphasis">Si \\(q > 0\\):</strong><br>
                         La fuerza apunta en la <strong class="text-green-highlight">misma dirección</strong> que el campo
                     </p>
                 </div>
                 <div class="force-card border-blue">
                     <p class="text-sm text-gray-300">
-                        <strong class="text-emphasis">Si \(q < 0\):</strong><br>
+                        <strong class="text-emphasis">Si \\(q < 0\\):</strong><br>
                         La fuerza apunta en <strong class="text-blue-highlight">dirección opuesta</strong> al campo
                     </p>
                 </div>

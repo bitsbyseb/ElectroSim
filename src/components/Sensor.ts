@@ -1,9 +1,9 @@
 import type { singlyLinkedList } from "@utils/LinkedList";
 import type { Particle } from "@components/particle";
-import type { Equipotential } from "@components/Equipotential";
 import type p5 from "p5";
+import { CollissionObject } from "./CollisionObject";
 
-export class ElectricFieldSensor {
+export class ElectricFieldSensor extends CollissionObject{
     public dragging = false;
     public isMouseOver = false;
     public radius = 10;
@@ -11,7 +11,9 @@ export class ElectricFieldSensor {
     protected arrowColor: string = "orange";
     private METERS_PER_PIXEL = 1e-10;
     private sensors: singlyLinkedList<ElectricFieldSensor>;
-    constructor(public x: number, public y: number, private p: p5, private particles: singlyLinkedList<Particle>, sensors: singlyLinkedList<ElectricFieldSensor>) {
+    
+    constructor(public x: number, public y: number, protected p: p5, private particles: singlyLinkedList<Particle>, sensors: singlyLinkedList<ElectricFieldSensor>) {
+        super(x,y,p,10);
         this.sensors = sensors;
     }
 
@@ -44,26 +46,6 @@ export class ElectricFieldSensor {
         const finalPointY = this.y + (Ey * scale);
         this.p.pop();
         this.drawArrow(this.x, this.y, finalPointX, finalPointY);
-    }
-
-    public mousePressed(): void {
-        const { mouseX, mouseY } = this.p;
-        const distance = this.p.dist(mouseX, mouseY, this.x, this.y);
-        if (distance < this.radius) {
-            this.dragging = true;
-            return;
-        }
-        this.dragging = false;
-    }
-
-    public mouseOver(): void {
-        const { mouseX, mouseY } = this.p;
-        const distance = this.p.dist(mouseX, mouseY, this.x, this.y);
-        if (distance < this.radius) {
-            this.isMouseOver = true;
-            return;
-        }
-        this.isMouseOver = false;
     }
 
     public drawArrow(x1: number, y1: number, x2: number, y2: number) {
@@ -131,60 +113,5 @@ export class ElectricFieldSensor {
     private delete() {
         const index = this.sensors.getIndexOf(this);
         this.sensors.remove(index);
-    }
-
-    public isCollidingWith(other: Particle | ElectricFieldSensor | Equipotential): boolean {
-        const distance = this.p.dist(this.x, this.y, other.x, other.y);
-        return distance < (this.radius + other.radius);
-    }
-
-    // Resolver colisión con otra partícula
-    public resolveCollision(other: Particle | ElectricFieldSensor | Equipotential): void {
-        const dx = other.x - this.x;
-        const dy = other.y - this.y;
-        const distance = this.p.dist(this.x, this.y, other.x, other.y);
-
-        // Si están exactamente en la misma posición, separar con un offset aleatorio
-        if (distance === 0) {
-            const angle = this.p.random(0, this.p.TWO_PI);
-            const separation = this.radius + other.radius + 1;
-            other.x = this.x + this.p.cos(angle) * separation;
-            other.y = this.y + this.p.sin(angle) * separation;
-            return;
-        }
-
-        // Calcular overlap (cuánto se están superponiendo)
-        const minDistance = this.radius + other.radius;
-        const overlap = minDistance - distance;
-
-        if (overlap > 0) {
-            // Normalizar el vector de dirección
-            const nx = dx / distance;
-            const ny = dy / distance;
-
-            // Si una está siendo arrastrada, solo mover la otra
-            if (this.dragging) {
-                other.x += nx * overlap;
-                other.y += ny * overlap;
-            } else if (other.dragging) {
-                this.x -= nx * overlap;
-                this.y -= ny * overlap;
-            } else {
-                // Si ninguna está siendo arrastrada, separar ambas por la mitad
-                const separationX = nx * overlap * 0.5;
-                const separationY = ny * overlap * 0.5;
-
-                this.x -= separationX;
-                this.y -= separationY;
-                other.x += separationX;
-                other.y += separationY;
-            }
-
-            // Mantener dentro de los límites del canvas
-            this.x = this.p.constrain(this.x, this.radius, this.p.width - this.radius);
-            this.y = this.p.constrain(this.y, this.radius, this.p.height - this.radius);
-            other.x = this.p.constrain(other.x, other.radius, this.p.width - other.radius);
-            other.y = this.p.constrain(other.y, other.radius, this.p.height - other.radius);
-        }
     }
 }

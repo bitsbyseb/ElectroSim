@@ -36,19 +36,16 @@ export class DocsService {
         const newDocsElement = document.createElement(docsTag);
         this.docsContainer.innerHTML = "";
         this.docsContainer.appendChild(newDocsElement);
-        setTimeout(() => {
-            const innerContainer = newDocsElement.querySelector('div');
-            if (innerContainer) {
-                renderMathInElement(innerContainer, {
-                    delimiters: [
-                        { left: '\\[', right: '\\]', display: true },
-                        { left: '\\(', right: '\\)', display: false }
-                    ],
-                    throwOnError: false,
-                    ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-                });
-            }
-        }, 1000);
+        const innerContainer = newDocsElement.querySelector('div');
+        renderMathInElement(innerContainer as HTMLDivElement, {
+            delimiters: [
+                { left: '\\[', right: '\\]', display: true },
+                { left: '\\(', right: '\\)', display: false }
+            ],
+            throwOnError: true,
+            ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });
+        console.log(`TOP: ${innerContainer?.scrollTop} LEFT: ${innerContainer?.scrollLeft}`)
     }
 
     public static get instance(): DocsService {

@@ -6,16 +6,20 @@ import { Particle } from '@components/particle';
 import { DocsService } from '@docs/docs.service';
 import { Grid } from '@components/Grid';
 import p5 from 'p5';
+import { QuizService } from './quiz/quiz.service';
 
-// DocsService
+const MAX_ENTITIES_NUMBER = 10;
+
+const quizService = QuizService.instance;
+
 const DocsServiceInstance = DocsService.instance;
 DocsServiceInstance.writeDoc("welcome");
 
-// DOM Elements
 const $canvasContainer = document.querySelector('#canvas-container') as HTMLDivElement;
 const $buttons = document.querySelector('#buttons');
 const $homeDocsButton = document.querySelector<HTMLButtonElement>('#homeDocs');
-// lists
+const $quizButton = document.querySelector<HTMLButtonElement>('#quiz');
+
 const particles: singlyLinkedList<Particle> = new singlyLinkedList();
 const sensors: singlyLinkedList<ElectricFieldSensor> = new singlyLinkedList();
 const potentialSensors: singlyLinkedList<Equipotential> = new singlyLinkedList();
@@ -39,8 +43,16 @@ function sketch(p: p5) {
       }
       const id = button.id;
 
+      const totalEntities = (particles.length + sensors.length + potentialSensors.length);
+      console.log("totalEntities = ", totalEntities)
+      const isReachingEntitiesLimit = totalEntities === MAX_ENTITIES_NUMBER - 1;
+
       switch (id) {
         case "electron":
+          if (isReachingEntitiesLimit) {
+            alert("No puedes agregar mas entidades, elimina algunas");
+            break;
+          }
           particles.append(new Particle({
             y: midY,
             x: midX,
@@ -50,8 +62,12 @@ function sketch(p: p5) {
           }));
           DocsServiceInstance.writeDoc("electron");
           break;
-
+          
         case "proton":
+          if (isReachingEntitiesLimit) {
+            alert("No puedes agregar mas entidades, elimina algunas");
+            break;
+          }
           particles.append(new Particle({
             y: midY,
             x: midX,
@@ -62,12 +78,20 @@ function sketch(p: p5) {
           DocsServiceInstance.writeDoc("proton");
           break;
 
-        case "electric":
+          case "electric":
+          if (isReachingEntitiesLimit) {
+            alert("No puedes agregar mas entidades, elimina algunas");
+            break;
+          }
           sensors.append(new ElectricFieldSensor(midX, midY, p, particles, sensors));
           DocsServiceInstance.writeDoc("electric");
           break;
-
-        case "potential":
+          
+          case "potential":
+          if (isReachingEntitiesLimit) {
+            alert("No puedes agregar mas entidades, elimina algunas");
+            break;
+          }
           potentialSensors.append(new Equipotential({
             p,
             y: midY,
@@ -78,13 +102,17 @@ function sketch(p: p5) {
           DocsServiceInstance.writeDoc("potential");
           break;
         case "reset":
-          particles.setLength(0);
-          sensors.setLength(0);
-          potentialSensors.setLength(0);
+          particles.clear();
+          sensors.clear();
+          potentialSensors.clear();
           break;
         default:
           break;
       }
+    });
+
+    $quizButton?.addEventListener('click', _ => {
+      quizService.spawnNameForm();
     });
   }
 
@@ -92,11 +120,11 @@ function sketch(p: p5) {
     p.background(0);
     p.cursor(p.ARROW);
 
-    // Dibujar grid
+
     new Grid(p).draw();
 
     new FieldLines(p, particles).draw();
-    // Detectar y resolver colisiones
+
     const arr: (Particle | ElectricFieldSensor | Equipotential)[] = [...particles.toArray(), ...sensors.toArray(), ...potentialSensors.toArray()];
     for (let i = 0; i < arr.length; i++) {
       for (let j = i + 1; j < arr.length; j++) {
@@ -107,21 +135,16 @@ function sketch(p: p5) {
     }
 
 
-    // Dibujar partículas
     particles.forEach(n => n.draw());
-    // dibujar sensores
     sensors.forEach(n => n.draw());
-    // dibujar sensores de potencial
     potentialSensors.forEach(n => n.draw());
 
   }
 
   p.mousePressed = () => {
-    // Iterar en orden inverso para que las partículas "encima" se detecten primero
     const particlesArr = particles.toArray();
     for (let i = particlesArr.length - 1; i >= 0; i--) {
       particlesArr[i].mousePressed();
-      // Si esta partícula activó el dragging, detenemos para evitar múltiples selecciones
       if (particlesArr[i].dragging) {
         break;
       }
@@ -130,7 +153,6 @@ function sketch(p: p5) {
     const sensorsArr = sensors.toArray();
     for (let i = sensorsArr.length - 1; i >= 0; i--) {
       sensorsArr[i].mousePressed();
-      // Si esta partícula activó el dragging, detenemos para evitar múltiples selecciones
       if (sensorsArr[i].dragging) {
         break;
       }
@@ -139,7 +161,6 @@ function sketch(p: p5) {
     const potentialSensorsArr = potentialSensors.toArray();
     for (let i = potentialSensorsArr.length - 1; i >= 0; i--) {
       potentialSensorsArr[i].mousePressed();
-      // Si esta partícula activó el dragging, detenemos para evitar múltiples selecciones
       if (potentialSensorsArr[i].dragging) {
         break;
       }

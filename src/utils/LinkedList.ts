@@ -15,9 +15,13 @@ class Node<ValueType> implements listItem<ValueType> {
 export class singlyLinkedList<ValueType> {
     private head: Node<ValueType> | null = null;
     private tail: Node<ValueType> | null = null;
-    private length: number = 0;
+    private _length: number = 0;
 
-    public setLength(value:number) {
+    get length() {
+        return this._length;
+    }
+
+    set length(value: number) {
         if (this.length === value) {
             return;
         }
@@ -34,6 +38,32 @@ export class singlyLinkedList<ValueType> {
         }
     }
 
+    clear() {
+        this.head = null;
+        this.tail = null;
+        this._length = 0;
+    }
+
+    getItemByIndex(index: number): Node<ValueType> | null {
+        if (index > this.length - 1 || index < 0) {
+            return null;
+        }
+
+        let currentObj: Node<ValueType> | null = this.head;
+        let currentCount = 0;
+
+        while (currentObj && currentCount <= index) {
+            currentObj = currentObj.next;
+            currentCount++;
+        }
+
+        if (!currentObj) {
+            return null;
+        }
+
+        return currentObj;
+    }
+
     append(value: ValueType): singlyLinkedList<ValueType> | void {
         const newNode = new Node<ValueType>(value);
         if (!this.head) {
@@ -43,7 +73,7 @@ export class singlyLinkedList<ValueType> {
             if (this.tail) this.tail.next = newNode;
             this.tail = newNode;
         }
-        this.length++;
+        this._length++;
         return this;
     }
 
@@ -83,7 +113,7 @@ export class singlyLinkedList<ValueType> {
         if (index === 0) {
             this.head = this.head.next;
             if (!this.head) this.tail = null;
-            this.length--;
+            this._length--;
             return this;
         }
 
@@ -92,8 +122,8 @@ export class singlyLinkedList<ValueType> {
             current = current.next!;
         }
         current.next = current.next?.next || null;
-        if (index === this.length - 1) this.tail = current;
-        this.length--;
+        if (index === this._length - 1) this.tail = current;
+        this._length--;
         return this;
     }
 
@@ -109,13 +139,13 @@ export class singlyLinkedList<ValueType> {
         }
     }
 
-    getIndexOf(subject:ValueType): number {
+    getIndexOf(subject: ValueType): number {
         if (this.tail === null || this.head === null) {
             return -1;
         }
 
         let currentObj: Node<ValueType> | null = this.head;
-        let result:number = 0;
+        let result: number = 0;
         let currentIndex = 0;
         while (currentObj) {
             if (subject === currentObj.value) {
@@ -142,11 +172,11 @@ export class singlyLinkedList<ValueType> {
         return result;
     }
 
-    filter(callback:(n:ValueType) => boolean): ValueType[] {
+    filter(callback: (n: ValueType) => boolean): ValueType[] {
         if (this.tail === null || this.head === null) {
             return [];
         }
-        const result:ValueType[] = [];
+        const result: ValueType[] = [];
         let currentObj: Node<ValueType> | null = this.head;
         while (currentObj) {
             const callbackResult = callback(currentObj.value);

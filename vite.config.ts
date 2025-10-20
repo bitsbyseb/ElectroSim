@@ -11,6 +11,8 @@ export default defineConfig({
       "@utils": path.resolve(__dirname, "./src/utils"),
       "@components": path.resolve(__dirname, "./src/components"),
       "@types": path.resolve(__dirname, "./src/types"),
+      "@models": path.resolve(__dirname, "./src/models"),
+      "@quiz": path.resolve(__dirname, "./src/quiz"),
     },
   },
   plugins: [

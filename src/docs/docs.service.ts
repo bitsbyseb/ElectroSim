@@ -45,7 +45,6 @@ export class DocsService {
             throwOnError: true,
             ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
         });
-        console.log(`TOP: ${innerContainer?.scrollTop} LEFT: ${innerContainer?.scrollLeft}`)
     }
 
     public static get instance(): DocsService {

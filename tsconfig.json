@@ -5,7 +5,9 @@
       "@docs/*":["./src/docs/*"],
       "@utils/*":["./src/utils/*"],
       "@components/*":["./src/components/*"],
-      "@types/*":["./src/types/*"]
+      "@types/*":["./src/types/*"],
+      "@models/*":["./src/models/*"],
+      "@quiz/*":["./src/quiz/*"]
     },
     "target": "ES2022",
     "useDefineForClassFields": true,

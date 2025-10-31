@@ -11,7 +11,7 @@ export class QuestionForm extends HTMLElement {
     }
 
     connectedCallback() {
-        this.classList.add("invisible");
+        // this.classList.add("invisible");
         this.style.height = "auto";
         this.append(this.template.content.cloneNode(true));
     }

@@ -1,7 +1,7 @@
 import data from "@models/data";
 import { Question } from "@models/question";
-import enableObserver from "@utils/enableObserver";
 import "@quiz/questionForm";
+import UsersService from "@users/users.service";
 
 export class QuizService {
     private quizContainer = document.querySelector<HTMLDivElement>(".theory");
@@ -42,24 +42,31 @@ export class QuizService {
         nameForm.addEventListener('submit', (e) => {
             const input: HTMLInputElement | null = document.querySelector('#name');
             e.preventDefault();
-            localStorage.setItem('name', (input !== null ? input.value : ''));
+            sessionStorage.setItem('username', (input !== null ? input.value : ''));
             this.quiz(this.QuestionInstances, 0);
         });
         nameForm.append(labelName, inputName, submitButton);
         this.quizContainer.appendChild(nameForm);
     }
 
-
-    public showResults() {
-        if (this.quizContainer !== null) {
+    public cleanStorage() {
+        sessionStorage.setItem('username',"");
+        this.results = [];
+    }
+    public async showResults() {
+        debugger;
+        const username = sessionStorage.getItem('username');
+        if (this.quizContainer !== null && username) {
             this.quizContainer.textContent = '';
             const div = document.createElement('div');
             div.classList.add('resultContainer');
-            const score = ((5.0 / this.QuestionInstances.length) * this.results.filter((bool) => bool === true).length).toFixed(2);
+            const results = ((5.0 / this.QuestionInstances.length) * (this.results.filter((bool) => bool === true).length)).toFixed(2);
             const h2 = document.createElement('h2');
-            h2.innerText = `${localStorage.getItem('name') ?? 'player'},tu puntaje es ${score}`
+            h2.innerText = `${username ?? 'player'},tu puntaje es ${results}`
             div.append(h2);
             this.quizContainer.append(div);
+            this.cleanStorage();
+            await UsersService.createUser(username,parseFloat(results));
         }
     }
 
@@ -68,7 +75,7 @@ export class QuizService {
             this.quizContainer.innerHTML = '';
             const quest = questions[index];
             const questionComponent = document.createElement('form-question');
-            enableObserver(questionComponent);
+            // enableObserver(questionComponent);
             questionComponent.setAttribute('options', questions[index].options.join(','));
             questionComponent.setAttribute('title', quest.question);
             this.quizContainer.append(questionComponent);
@@ -85,7 +92,12 @@ export class QuizService {
                 this.quiz(questions, index);
             });
         } else {
-            this.showResults();
+            this.showResults().then(_ => {
+                console.log("User created");
+            })
+            .catch(err => {
+                console.error("User creation error:\n\t"+err);
+            });
         }
     }
 

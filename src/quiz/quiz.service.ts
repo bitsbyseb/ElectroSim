@@ -54,7 +54,6 @@ export class QuizService {
         this.results = [];
     }
     public async showResults() {
-        debugger;
         const username = sessionStorage.getItem('username');
         if (this.quizContainer !== null && username) {
             this.quizContainer.textContent = '';

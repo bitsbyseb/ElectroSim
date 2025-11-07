@@ -10,9 +10,6 @@ export default class UsersService {
         try {
             await fetch(UsersService.url+"/users",{
                 method:'POST',
-                headers:{
-                    "Access-Control-Allow-Origin":"http://localhost:5173/ElectroSim/"
-                },
                 body: JSON.stringify({
                     username,
                     results
